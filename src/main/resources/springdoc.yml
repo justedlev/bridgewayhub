@@ -1,0 +1,11 @@
+springdoc:
+  show-actuator: true
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    urls:
+      - url: /service-1/api/v3/api-docs
+        name: 'Service N1 APIs'
+      - url: /service-2/api/v3/api-docs
+        name: 'Service N2 APIs'

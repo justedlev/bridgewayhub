@@ -1,0 +1,18 @@
+keycloak:
+  server-url: ${KEYCLOAK_HOST}
+  issuer-uri: ${KEYCLOAK_ISSUER_URI}
+  jwk-set-uri: ${KEYCLOAK_JWKS_URI}
+  introspection-uri: ${KEYCLOAK_INTROSPECTION_ENDPOINT}
+  token-uri: ${KEYCLOAK_TOKEN_ENDPOINT}
+  realm: ${KEYCLOAK_REALM}
+  client:
+    name: bridgewayhub
+    id: ${KEYCLOAK_CLIENT_ID}
+    secret: ${KEYCLOAK_CLIENT_SECRET}
+    username: su
+    password: su
+  jwt-converter:
+    role-claims: realm_access.roles,resource_access.account.roles
+    username-attribute: preferred_username
+  user-groups:
+    - f9fef35f-a9cc-4ac1-a164-e9755700d56e

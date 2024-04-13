@@ -1,0 +1,8 @@
+eureka:
+  instance:
+    instance-id: ${spring.application.name}
+    app-group-name: justedlev-microservice
+    appname: ${spring.application.name}
+  client:
+    service-url:
+      defaultZone: ${SERVICE_REGISTRY}
