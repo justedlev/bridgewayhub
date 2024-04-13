@@ -1,0 +1,11 @@
+version: "3.9"
+name: justedlev-microservice
+services:
+  api-gateway:
+    build: .
+    container_name: bridgewayhub
+    env_file:
+      - ".docker.env"
+    image: justedlev/bridgewayhub:1.0.0
+    ports:
+      - "8765:8765"
