@@ -18,5 +18,5 @@ already started or disable the dependency in [pom.xml](pom.xml)
 ### 🚢 Docker
 You also can run the container in Docker env, the [docker-compose.yml](docker-compose.yml) based on [.docker.env](.docker.env)
 
-1. ``maven clean verify``
+1. ``mvn clean package``
 2. ``docker-compose up -d --build``
