@@ -1,0 +1,17 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Default" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <option name="envFilePaths">
+      <option value="~/.env" />
+    </option>
+    <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <module name="bridgewayhub" />
+    <selectedOptions>
+      <option name="environmentVariables" />
+    </selectedOptions>
+    <option name="SPRING_BOOT_MAIN_CLASS" value="io.github.justedlev.microservice.BridgewayhubApplication" />
+    <option name="VM_PARAMETERS" value="@.vmoptions" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
