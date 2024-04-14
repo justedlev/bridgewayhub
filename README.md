@@ -18,7 +18,4 @@ Use the base [run configuration](.run%2FDefault.run.xml), that based on [.env](.
 already started or disable the dependency in [pom.xml](pom.xml)
 
 ### 🚢 Docker
-You also can run the container in Docker env using the [docker-compose.yml](docker-compose.yml) based on [.docker.env](.docker.env)
-
-1. ``mvn clean package``
-2. ``docker-compose up -d --build``
+Run with [Docker](README.Docker.md)
