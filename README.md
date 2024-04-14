@@ -14,7 +14,7 @@
 ## 📋 About
 
 __BridgeWay Hub__ it's an *API Gateway* for easy launch and using, based on the Spring framework 6,
-keycloak as a security layer and eureka client for registration in the registry service, etc.
+keycloak as a security layer and eureka client for registration in the service discovery, etc.
 You can see the all dependencies [here](pom.xml)
 
 ## ⚠️ Requirements
