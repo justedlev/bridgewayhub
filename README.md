@@ -29,14 +29,14 @@ add to [compose.yaml](compose.yaml) in the `services` section
 sso:
   container_name: keycloak
   image: quay.io/keycloak/keycloak:24.0.2
-  command: [ "start-dev", "--http-port=8321" ]
+  command: [ "start-dev", "--http-port=9321" ]
   environment:
     KEYCLOAK_ADMIN: admin
     KEYCLOAK_ADMIN_PASSWORD: admin
     KC_HEALTH_ENABLED: true
     KC_HOSTNAME: localhost
-    KC_DB: postgres
-    KC_DB_URL: jdbc:postgresql://postgres:5432/justedlev-microservice-db
+    KC_DB: keycloak-db
+    KC_DB_URL: jdbc:postgresql://postgres:5432/${KC_DB}
     KC_DB_USERNAME: su
     KC_DB_PASSWORD: su
     KC_DB_SCHEMA: keycloak
@@ -57,7 +57,7 @@ postgres:
   container_name: postgres
   image: postgres:15.4-alpine
   environment:
-    POSTGRES_DB: justedlev-microservice-db
+    POSTGRES_DB: keycloak-db
     POSTGRES_USER: su
     POSTGRES_PASSWORD: su
     PGDATA: /var/lib/postgresql/data/pgdata
