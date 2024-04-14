@@ -1,4 +1,4 @@
-<div id="header" style="text-align: center;">
+<div id="header" align="center">
     <h1>BridgeWay Hub</h1>
     <h3>🧱 API Gateway</h3>
     <div id="badges">
