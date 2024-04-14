@@ -2,10 +2,10 @@ name: justedlev-microservice
 services:
   bridgewayhub:
     container_name: bridgewayhub
-    image: justedlev/bridgewayhub:1.0.0
+    image: justedlev/bridgewayhub:0.0.1-SNAPSHOT
     build:
       context: .
     env_file:
-      - ".docker.env"
+      - docker.env
     ports:
       - 8123:8123

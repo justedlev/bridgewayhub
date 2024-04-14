@@ -17,6 +17,13 @@ __BridgeWay Hub__ it's an *API Gateway* for easy launch and using, based on the 
 keycloak as a security layer and eureka client for registration in the registry service, etc.
 You can see the all dependencies [here](pom.xml)
 
+## ⚠️ Requirements
+
+Before running the app you need to configure the next services that depends on:
+
+ - Keycloak
+ - Eureka
+
 ## ▶️ Run
 
 ### 🛠️ Intellij
