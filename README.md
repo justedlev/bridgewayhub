@@ -12,12 +12,11 @@
 
 *BridgeWay Hub* it's an API Gateway for easy launch and use of the API gateway capabilities, based on the Spring framework 6, keycloak as a security layer and eureka client for registration in the registry service, etc. You can see the all dependencies [here](pom.xml)
 
-## ▶️ Distribute
+## ▶️ Run
 
 ### 🛠️ Intellij
 
-Use the base [run configuration](.run%2FDefault.run.xml), that based on [.env](.env), to run the app on local machine, make sure that the eureka service 
-already started or disable the dependency in [pom.xml](pom.xml)
+Clone the repository using `git clone ` and after run the app local, you can use the simple [run configuration](.run%2FDefault.run.xml), that based on [.env](.env) and [vm options](.vmoptions), make sure that the service registry (eureka service) already started or disable the dependency in [pom.xml](pom.xml)
 
 ### 🚢 Docker
 Run with [Docker](README.Docker.md)
