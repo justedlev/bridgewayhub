@@ -8,9 +8,11 @@
 ![GitHub Repo stars](https://img.shields.io/github/stars/Justedlev/bridgewayhub)
 ![GitHub issues](https://img.shields.io/github/issues/Justedlev/bridgewayhub)
 
-This is a simple API Gateway project written in Java 17 and based on the Spring parent v3, keycloak as a security layer and eureka client for registration in the registry service, etc. You can see the all dependencies [here](pom.xml)
+## 📋 About
 
-## ▶️ Start
+*BridgeWay Hub* it's an API Gateway for easy launch and use of the API gateway capabilities, based on the Spring framework 6, keycloak as a security layer and eureka client for registration in the registry service, etc. You can see the all dependencies [here](pom.xml)
+
+## ▶️ Distribute
 
 ### 🛠️ Intellij
 
