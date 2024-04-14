@@ -21,8 +21,8 @@ You can see the all dependencies [here](pom.xml)
 
 Before running the app you need to configure the next services that depends on:
 
- - Keycloak
- - Eureka
+- Keycloak
+- Eureka: you can use my [solution](https://github.com/Justedlev/simple-eureka-server)
 
 ## ▶️ Run
 
@@ -34,5 +34,7 @@ and [jvm options](.vmoptions), make sure that the service registry (eureka servi
 or disable the dependency in [pom.xml](pom.xml)
 
 ### 🚢 Docker
+
+[Docker Hub](https://hub.docker.com/repository/docker/justedlev/bridgewayhub/general)
 
 Run with [Docker](README.Docker.md)
