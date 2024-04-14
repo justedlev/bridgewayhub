@@ -21,8 +21,70 @@ You can see the all dependencies [here](pom.xml)
 
 Before running the app you need to configure the next services that depends on:
 
-- Keycloak
-- Eureka: you can use my [solution](https://github.com/Justedlev/simple-eureka-server)
+#### Keycloak
+
+add to [compose.yaml](compose.yaml) in the `services` section
+
+```yaml
+sso:
+  container_name: keycloak
+  image: quay.io/keycloak/keycloak:24.0.2
+  command: [ "start-dev", "--http-port=8321" ]
+  environment:
+    KEYCLOAK_ADMIN: admin
+    KEYCLOAK_ADMIN_PASSWORD: admin
+    KC_HEALTH_ENABLED: true
+    KC_HOSTNAME: localhost
+    KC_DB: postgres
+    KC_DB_URL: jdbc:postgresql://postgres:5432/justedlev-microservice-db
+    KC_DB_USERNAME: su
+    KC_DB_PASSWORD: su
+    KC_DB_SCHEMA: keycloak
+  depends_on:
+    - postgres
+  ports:
+    - 9321:9321
+```
+
+---
+
+#### DB: for [keycloak](#Keycloak)
+
+add to [compose.yaml](compose.yaml) in the `services` section
+
+```yaml
+postgres:
+  container_name: postgres
+  image: postgres:15.4-alpine
+  environment:
+    POSTGRES_DB: justedlev-microservice-db
+    POSTGRES_USER: su
+    POSTGRES_PASSWORD: su
+    PGDATA: /var/lib/postgresql/data/pgdata
+  volumes:
+    - ./.tmp/init-db:/docker-entrypoint-initdb.d
+    - ./.tmp/postgresql-data:/var/lib/postgresql/data
+  ports:
+    - 5432:5432
+  healthcheck:
+    test: [ "CMD-SHELL", "pg_isready -U su -d" ]
+    interval: 15s
+    timeout: 10s
+    retries: 7
+    start_period: 12s
+  restart: unless-stopped
+  deploy:
+    resources:
+      limits:
+        cpus: '1'
+        memory: 250MB
+```
+
+---
+
+#### Eureka
+
+you can use my [solution](https://github.com/Justedlev/simple-eureka-server)
 
 ## ▶️ Run
 
