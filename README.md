@@ -91,8 +91,7 @@ you can use my [solution](https://github.com/Justedlev/simple-eureka-server)
 
 The full compose.yaml that I personally use
 
-```yaml
-name: justedlev-microservice
+```yamlname: justedlev-microservice
 services:
   bridgewayhub:
     container_name: bridgewayhub
@@ -105,7 +104,19 @@ services:
       - 8123:8123
     depends_on:
       - sso
-      - simple-eureka-server
+      - service-discovery
+
+# Service discovery
+  service-discovery:
+    container_name: service-discovery
+	image: justedlev/simple-eureka-server:1.0.0-SNAPSHOT
+    environment:
+      PORT: 8761
+      USERNAME: docker
+      PASSWORD: docker!123
+      SERVICE_DISCOVERY_ZONE: http://service-discovery:${PORT}/eureka
+    ports:
+      - 8761:8761
 
   # SSO service (keycloak)
   sso:
