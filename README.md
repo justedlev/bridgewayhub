@@ -91,7 +91,8 @@ you can use my [solution](https://github.com/Justedlev/simple-eureka-server)
 
 The full compose.yaml that I personally use
 
-```yamlname: justedlev-microservice
+```yaml
+name: justedlev-microservice
 services:
   bridgewayhub:
     container_name: bridgewayhub
