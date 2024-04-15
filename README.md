@@ -38,7 +38,7 @@ or disable the dependency in [pom.xml](pom.xml)
 
 I have a repository on [Docker Hub](https://hub.docker.com/repository/docker/justedlev/bridgewayhub/general)
 
-## With docker compose
+### 🗂️ Docker compose
 
 Simple command to run the container: `docker compose up -d --build`
 
