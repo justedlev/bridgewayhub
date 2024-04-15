@@ -49,7 +49,7 @@ name: justedlev-microservice
 services:
   bridgewayhub:
     container_name: bridgewayhub
-    image: justedlev/bridgewayhub:0.0.1-SNAPSHOTdock
+    image: justedlev/bridgewayhub:0.0.1-SNAPSHOT
     build:
       context: .
     environment:
