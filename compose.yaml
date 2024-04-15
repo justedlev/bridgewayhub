@@ -18,10 +18,8 @@ services:
     container_name: service-discovery
     image: justedlev/simple-eureka-server:1.0.0-SNAPSHOT
     environment:
-      PORT: 8761
-      USERNAME: docker
-      PASSWORD: docker!123
-      SERVICE_DISCOVERY_ZONE: http://service-discovery:${PORT}/eureka
+      USERNAME: {example}
+      PASSWORD: {example}
     ports:
       - 8761:8761
 
@@ -31,14 +29,14 @@ services:
     image: quay.io/keycloak/keycloak:24.0.2
     command: ["start-dev", "--http-port=9321"]
     environment:
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin
+      KEYCLOAK_ADMIN: {example}
+      KEYCLOAK_ADMIN_PASSWORD: {example}
       KC_HEALTH_ENABLED: true
       KC_HOSTNAME: localhost
-      KC_DB: keycloak-db
-      KC_DB_URL: jdbc:postgresql://postgres:5432/${KC_DB}
-      KC_DB_USERNAME: su
-      KC_DB_PASSWORD: su
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/{example}
+      KC_DB_USERNAME: {example}
+      KC_DB_PASSWORD: {example}
       KC_DB_SCHEMA: keycloak
     depends_on:
       - postgres
@@ -50,9 +48,9 @@ services:
     container_name: postgres
     image: postgres:16.2-alpine
     environment:
-      POSTGRES_DB: justedlev-db
-      POSTGRES_USER: su
-      POSTGRES_PASSWORD: su
+      POSTGRES_DB: {example}
+      POSTGRES_USER: {example}
+      POSTGRES_PASSWORD: {example}
     volumes:
       - db-data:/var/lib/postgresql/data
     ports:
