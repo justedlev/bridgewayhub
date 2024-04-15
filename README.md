@@ -53,6 +53,45 @@ sso:
 add to [compose.yaml](compose.yaml) in the `services` section
 
 ```yaml
+  postgres:
+    container_name: postgres
+    image: postgres:16.2-alpine
+    environment:
+      POSTGRES_DB: justedlev-db
+      POSTGRES_USER: su
+      POSTGRES_PASSWORD: su
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: ["CMD", "pg_isready"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 12s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 250MB
+
+volumes:
+  db-data:
+```
+
+---
+
+#### Eureka
+
+you can use my [solution](https://github.com/Justedlev/simple-eureka-server)
+
+#### Docker compose
+
+The full compose.yaml that I personally use
+
+```yaml
 name: justedlev-microservice
 services:
   bridgewayhub:
@@ -115,20 +154,6 @@ services:
 
 volumes:
   db-data:
-```
-
----
-
-#### Eureka
-
-you can use my [solution](https://github.com/Justedlev/simple-eureka-server)
-
-#### Docker compose
-
-The full compose.yaml that I personally use
-
-```yaml
-
 ```
 
 ## ▶️ Run
