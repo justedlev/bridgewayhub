@@ -21,70 +21,9 @@ You can see the all dependencies [here](pom.xml)
 
 Before running the app you need to configure the next services that depends on:
 
-#### Keycloak
-
-add to [compose.yaml](compose.yaml) in the `services` section
-
-```yaml
-sso:
-  container_name: keycloak
-  image: quay.io/keycloak/keycloak:24.0.2
-  command: [ "start-dev", "--http-port=9321" ]
-  environment:
-    KEYCLOAK_ADMIN: admin
-    KEYCLOAK_ADMIN_PASSWORD: admin
-    KC_HEALTH_ENABLED: true
-    KC_HOSTNAME: localhost
-    KC_DB: keycloak-db
-    KC_DB_URL: jdbc:postgresql://postgres:5432/${KC_DB}
-    KC_DB_USERNAME: su
-    KC_DB_PASSWORD: su
-    KC_DB_SCHEMA: keycloak
-  depends_on:
-    - postgres
-  ports:
-    - 9321:9321
-```
-
----
-
-#### DB: for [keycloak](#Keycloak)
-
-add to [compose.yaml](compose.yaml) in the `services` section
-
-```yaml
-postgres:
-  container_name: postgres
-  image: postgres:15.4-alpine
-  environment:
-    POSTGRES_DB: keycloak-db
-    POSTGRES_USER: su
-    POSTGRES_PASSWORD: su
-    PGDATA: /var/lib/postgresql/data/pgdata
-  volumes:
-    - ./.tmp/init-db:/docker-entrypoint-initdb.d
-    - ./.tmp/postgresql-data:/var/lib/postgresql/data
-  ports:
-    - 5432:5432
-  healthcheck:
-    test: [ "CMD-SHELL", "pg_isready -U su -d" ]
-    interval: 15s
-    timeout: 10s
-    retries: 7
-    start_period: 12s
-  restart: unless-stopped
-  deploy:
-    resources:
-      limits:
-        cpus: '1'
-        memory: 250MB
-```
-
----
-
-#### Eureka
-
-you can use my [solution](https://github.com/Justedlev/simple-eureka-server)
+- Keycloak
+- DB for Keycloak if needed
+- Eureka Server, my [solution](https://github.com/Justedlev/simple-eureka-server)
 
 ## ▶️ Run
 
@@ -97,6 +36,87 @@ or disable the dependency in [pom.xml](pom.xml)
 
 ### 🚢 Docker
 
-[Docker Hub](https://hub.docker.com/repository/docker/justedlev/bridgewayhub/general)
+I have a repository on [Docker Hub](https://hub.docker.com/repository/docker/justedlev/bridgewayhub/general)
 
-Run with [Docker](README.Docker.md)
+## With docker compose
+
+Simple command to run the container: `docker compose up -d --build`
+
+The full compose.yaml that I personally use
+
+```yaml
+name: justedlev-microservice
+services:
+  bridgewayhub:
+    container_name: bridgewayhub
+    image: justedlev/bridgewayhub:0.0.1-SNAPSHOT
+    build:
+      context: .
+    env_file:
+      - docker.env
+    ports:
+      - 8123:8123
+    depends_on:
+      - sso
+      - service-discovery
+
+# Service discovery
+  service-discovery:
+    container_name: service-discovery
+    image: justedlev/simple-eureka-server:1.0.0-SNAPSHOT
+    environment:
+      PORT: 8761
+      USERNAME: docker
+      PASSWORD: docker!123
+      SERVICE_DISCOVERY_ZONE: http://service-discovery:${PORT}/eureka
+    ports:
+      - 8761:8761
+
+  # SSO service (keycloak)
+  sso:
+    container_name: keycloak
+    image: quay.io/keycloak/keycloak:24.0.2
+    command: ["start-dev", "--http-port=9321"]
+    environment:
+      KEYCLOAK_ADMIN: admin
+      KEYCLOAK_ADMIN_PASSWORD: admin
+      KC_HEALTH_ENABLED: true
+      KC_HOSTNAME: localhost
+      KC_DB: keycloak-db
+      KC_DB_URL: jdbc:postgresql://postgres:5432/${KC_DB}
+      KC_DB_USERNAME: su
+      KC_DB_PASSWORD: su
+      KC_DB_SCHEMA: keycloak
+    depends_on:
+      - postgres
+    ports:
+      - 9321:9321
+
+  # Postgres DB
+  postgres:
+    container_name: postgres
+    image: postgres:16.2-alpine
+    environment:
+      POSTGRES_DB: justedlev-db
+      POSTGRES_USER: su
+      POSTGRES_PASSWORD: su
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    healthcheck:
+      test: ["CMD", "pg_isready"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+      start_period: 12s
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 250MB
+
+volumes:
+  db-data:
+```
