@@ -49,11 +49,23 @@ name: justedlev-microservice
 services:
   bridgewayhub:
     container_name: bridgewayhub
-    image: justedlev/bridgewayhub:0.0.1-SNAPSHOT
+    image: justedlev/bridgewayhub:0.0.1-SNAPSHOTdock
     build:
       context: .
-    env_file:
-      - docker.env
+    environment:
+      SERVICE_REGISTRY: http://{example}:{example}@service-discovery:8761/eureka
+      ORIGINS: http://service-discovery:8761,http://localhost:8761,http://localhost:3000
+      USERNAME: {example}
+      PASSWORD: {example}
+      ROLES: admin,user,editor,owner
+      KEYCLOAK_HOST: http://sso:9321
+      KEYCLOAK_REALM: {example}
+      KEYCLOAK_ISSUER_URI: ${KEYCLOAK_HOST}/realms/${KEYCLOAK_REALM}
+      KEYCLOAK_JWKS_URI: ${KEYCLOAK_ISSUER_URI}/protocol/openid-connect/certs
+      KEYCLOAK_TOKEN_ENDPOINT: ${KEYCLOAK_ISSUER_URI}/protocol/openid-connect/token
+      KEYCLOAK_INTROSPECTION_ENDPOINT: ${KEYCLOAK_ISSUER_URI}/protocol/openid-connect/token/introspect
+      KEYCLOAK_CLIENT_ID: {example}
+      KEYCLOAK_CLIENT_SECRET: {example}
     ports:
       - 8123:8123
     depends_on:
