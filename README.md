@@ -21,73 +21,26 @@ You can see the all dependencies [here](pom.xml)
 
 Before running the app you need to configure the next services that depends on:
 
-#### Keycloak
+- Keycloak
+- DB for Keycloak if needed
+- Eureka you can use my [solution](https://github.com/Justedlev/simple-eureka-server)
 
-add to [compose.yaml](compose.yaml) in the `services` section
+## ▶️ Run
 
-```yaml
-sso:
-  container_name: keycloak
-  image: quay.io/keycloak/keycloak:24.0.2
-  command: [ "start-dev", "--http-port=9321" ]
-  environment:
-    KEYCLOAK_ADMIN: admin
-    KEYCLOAK_ADMIN_PASSWORD: admin
-    KC_HEALTH_ENABLED: true
-    KC_HOSTNAME: localhost
-    KC_DB: keycloak-db
-    KC_DB_URL: jdbc:postgresql://postgres:5432/${KC_DB}
-    KC_DB_USERNAME: su
-    KC_DB_PASSWORD: su
-    KC_DB_SCHEMA: keycloak
-  depends_on:
-    - postgres
-  ports:
-    - 9321:9321
-```
+### 🛠️ Intellij
 
----
+Clone the repository using `git clone https://github.com/Justedlev/bridgewayhub.git` and after that run the app local,
+you can use the simple [run configuration](.run%2FDefault.run.xml), that based on [.env](.env)
+and [jvm options](.vmoptions), make sure that the service registry (eureka service) already started
+or disable the dependency in [pom.xml](pom.xml)
 
-#### DB: for [keycloak](#Keycloak)
+### 🚢 Docker
 
-add to [compose.yaml](compose.yaml) in the `services` section
+I have a repository on [Docker Hub](https://hub.docker.com/repository/docker/justedlev/bridgewayhub/general)
 
-```yaml
-  postgres:
-    container_name: postgres
-    image: postgres:16.2-alpine
-    environment:
-      POSTGRES_DB: justedlev-db
-      POSTGRES_USER: su
-      POSTGRES_PASSWORD: su
-    volumes:
-      - db-data:/var/lib/postgresql/data
-    ports:
-      - 5432:5432
-    healthcheck:
-      test: ["CMD", "pg_isready"]
-      interval: 15s
-      timeout: 10s
-      retries: 5
-      start_period: 12s
-    restart: unless-stopped
-    deploy:
-      resources:
-        limits:
-          cpus: "1"
-          memory: 250MB
+## With docker compose
 
-volumes:
-  db-data:
-```
-
----
-
-#### Eureka
-
-you can use my [solution](https://github.com/Justedlev/simple-eureka-server)
-
-#### Docker compose
+Simple command to run the container: `docker compose up -d --build`
 
 The full compose.yaml that I personally use
 
@@ -167,18 +120,3 @@ services:
 volumes:
   db-data:
 ```
-
-## ▶️ Run
-
-### 🛠️ Intellij
-
-Clone the repository using `git clone https://github.com/Justedlev/bridgewayhub.git` and after that run the app local,
-you can use the simple [run configuration](.run%2FDefault.run.xml), that based on [.env](.env)
-and [jvm options](.vmoptions), make sure that the service registry (eureka service) already started
-or disable the dependency in [pom.xml](pom.xml)
-
-### 🚢 Docker
-
-[Docker Hub](https://hub.docker.com/repository/docker/justedlev/bridgewayhub/general)
-
-Run with [Docker](README.Docker.md)
