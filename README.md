@@ -23,7 +23,7 @@ Before running the app you need to configure the next services that depends on:
 
 - Keycloak
 - DB for Keycloak if needed
-- Eureka you can use my [solution](https://github.com/Justedlev/simple-eureka-server)
+- Eureka Server, my [solution](https://github.com/Justedlev/simple-eureka-server)
 
 ## ▶️ Run
 
