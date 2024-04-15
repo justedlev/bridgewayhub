@@ -110,7 +110,7 @@ services:
 # Service discovery
   service-discovery:
     container_name: service-discovery
-	image: justedlev/simple-eureka-server:1.0.0-SNAPSHOT
+    image: justedlev/simple-eureka-server:1.0.0-SNAPSHOT
     environment:
       PORT: 8761
       USERNAME: docker
