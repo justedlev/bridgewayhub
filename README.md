@@ -6,8 +6,12 @@
         <img alt="framework" src="https://img.shields.io/badge/Spring%20Framework%206-6cb52d">
         <img alt="framework" src="https://img.shields.io/badge/Spring%20Boot%203-6cb52d">
         <img alt="GitHub" src="https://img.shields.io/github/license/Justedlev/bridgewayhub">
-        <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Justedlev/bridgewayhub">
-        <img alt="GitHub issues" src="https://img.shields.io/github/issues/Justedlev/bridgewayhub">
+        <a href="https://github.com/Justedlev/bridgewayhub/star">
+            <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Justedlev/bridgewayhub">
+        </a>
+        <a href="https://github.com/Justedlev/bridgewayhub/issues">
+            <img alt="GitHub issues" src="https://img.shields.io/github/issues/Justedlev/bridgewayhub">
+        </a>
     </div>
 </div>
 
@@ -60,7 +64,7 @@ services:
       - sso
       - service-discovery
 
-# Service discovery
+  # Service discovery
   service-discovery:
     container_name: service-discovery
     image: justedlev/simple-eureka-server:1.0.0-SNAPSHOT
@@ -76,7 +80,7 @@ services:
   sso:
     container_name: keycloak
     image: quay.io/keycloak/keycloak:24.0.2
-    command: ["start-dev", "--http-port=9321"]
+    command: [ "start-dev", "--http-port=9321" ]
     environment:
       KEYCLOAK_ADMIN: admin
       KEYCLOAK_ADMIN_PASSWORD: admin
@@ -105,7 +109,7 @@ services:
     ports:
       - 5432:5432
     healthcheck:
-      test: ["CMD", "pg_isready"]
+      test: [ "CMD", "pg_isready" ]
       interval: 15s
       timeout: 10s
       retries: 5
