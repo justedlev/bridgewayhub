@@ -6,8 +6,12 @@
         <img alt="framework" src="https://img.shields.io/badge/Spring%20Framework%206-6cb52d">
         <img alt="framework" src="https://img.shields.io/badge/Spring%20Boot%203-6cb52d">
         <img alt="GitHub" src="https://img.shields.io/github/license/Justedlev/bridgewayhub">
-        <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Justedlev/bridgewayhub">
-        <img alt="GitHub issues" src="https://img.shields.io/github/issues/Justedlev/bridgewayhub">
+        <a href="https://github.com/Justedlev/bridgewayhub/star">
+            <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Justedlev/bridgewayhub">
+        </a>
+        <a href="https://github.com/Justedlev/bridgewayhub/issues">
+            <img alt="GitHub issues" src="https://img.shields.io/github/issues/Justedlev/bridgewayhub">
+        </a>
     </div>
 </div>
 
@@ -115,7 +119,7 @@ services:
     ports:
       - 5432:5432
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U justedlev", "-d" ]
+      test: [ "CMD", "pg_isready", "-U {example}", "-d" ]
       interval: 15s
       timeout: 10s
       retries: 5
