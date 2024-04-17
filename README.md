@@ -1,18 +1,15 @@
 <div id="header" align="center">
     <h1>BridgeWay Hub</h1>
     <h3>🧱 API Gateway</h3>
-    <div id="badges">
-        <img alt="language" src="https://img.shields.io/badge/Java%2017-e6892e">
-        <img alt="framework" src="https://img.shields.io/badge/Spring%20Framework%206-6cb52d">
-        <img alt="framework" src="https://img.shields.io/badge/Spring%20Boot%203-6cb52d">
-        <img alt="GitHub" src="https://img.shields.io/github/license/Justedlev/bridgewayhub">
-        <a href="https://github.com/Justedlev/bridgewayhub/star">
-            <img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/Justedlev/bridgewayhub">
-        </a>
-        <a href="https://github.com/Justedlev/bridgewayhub/issues">
-            <img alt="GitHub issues" src="https://img.shields.io/github/issues/Justedlev/bridgewayhub">
-        </a>
-    </div>
+</div>
+
+<div id="badges" align="center">
+    [!language](https://img.shields.io/badge/Java%2017-e6892e)
+    [!framework](https://img.shields.io/badge/Spring%20Framework%206-6cb52d)
+    [!framework](https://img.shields.io/badge/Spring%20Boot%203-6cb52d)
+    [!license](https://img.shields.io/github/license/Justedlev/bridgewayhub)
+    [[!stars](https://img.shields.io/github/stars/Justedlev/bridgewayhub)](https://github.com/Justedlev/bridgewayhub/star)
+    [[!issues](https://img.shields.io/github/issues/Justedlev/bridgewayhub)](https://github.com/Justedlev/bridgewayhub/issues)
 </div>
 
 ## 📋 About
