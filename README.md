@@ -4,12 +4,14 @@
 </div>
 
 <div id="badges" align="center">
-    [!language](https://img.shields.io/badge/Java%2017-e6892e)
-    [!framework](https://img.shields.io/badge/Spring%20Framework%206-6cb52d)
-    [!framework](https://img.shields.io/badge/Spring%20Boot%203-6cb52d)
-    [!license](https://img.shields.io/github/license/Justedlev/bridgewayhub)
-    [[!stars](https://img.shields.io/github/stars/Justedlev/bridgewayhub)](https://github.com/Justedlev/bridgewayhub/star)
-    [[!issues](https://img.shields.io/github/issues/Justedlev/bridgewayhub)](https://github.com/Justedlev/bridgewayhub/issues)
+
+![language](https://img.shields.io/badge/Java%2017-e6892e)
+![framework](https://img.shields.io/badge/Spring%20Framework%206-6cb52d)
+![framework](https://img.shields.io/badge/Spring%20Boot%203-6cb52d)
+![license](https://img.shields.io/github/license/Justedlev/bridgewayhub)
+[![stars](https://img.shields.io/github/stars/Justedlev/bridgewayhub)](https://github.com/Justedlev/bridgewayhub/star)
+[![issues](https://img.shields.io/github/issues/Justedlev/bridgewayhub)](https://github.com/Justedlev/bridgewayhub/issues)
+
 </div>
 
 ## 📋 About
