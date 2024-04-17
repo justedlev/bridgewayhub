@@ -18,7 +18,7 @@
 ## 📋 About
 
 __BridgeWay Hub__ it's an *API Gateway* for easy launch and using, based on the Spring framework 6,
-keycloak as a security layer and eureka client for registration in the registry service, etc.
+keycloak as a security layer and eureka client for registration in the service discovery, etc.
 You can see the all dependencies [here](pom.xml)
 
 ## ⚠️ Requirements
@@ -56,8 +56,20 @@ services:
     image: justedlev/bridgewayhub:0.0.1-SNAPSHOT
     build:
       context: .
-    env_file:
-      - docker.env
+    environment:
+      SERVICE_REGISTRY: http://{example}:{example}@service-discovery:8761/eureka
+      ORIGINS: http://service-discovery:8761,http://localhost:8761,http://localhost:3000
+      USERNAME: "{example}"
+      PASSWORD: "{example}"
+      ROLES: admin,user,editor,owner
+      KEYCLOAK_HOST: http://sso:9321
+      KEYCLOAK_REALM: "{example}"
+      KEYCLOAK_ISSUER_URI: ${KEYCLOAK_HOST}/realms/${KEYCLOAK_REALM}
+      KEYCLOAK_JWKS_URI: ${KEYCLOAK_ISSUER_URI}/protocol/openid-connect/certs
+      KEYCLOAK_TOKEN_ENDPOINT: ${KEYCLOAK_ISSUER_URI}/protocol/openid-connect/token
+      KEYCLOAK_INTROSPECTION_ENDPOINT: ${KEYCLOAK_ISSUER_URI}/protocol/openid-connect/token/introspect
+      KEYCLOAK_CLIENT_ID: "{example}"
+      KEYCLOAK_CLIENT_SECRET: "{example}"
     ports:
       - 8123:8123
     depends_on:
@@ -69,10 +81,8 @@ services:
     container_name: service-discovery
     image: justedlev/simple-eureka-server:1.0.0-SNAPSHOT
     environment:
-      PORT: 8761
-      USERNAME: docker
-      PASSWORD: docker!123
-      SERVICE_DISCOVERY_ZONE: http://service-discovery:${PORT}/eureka
+      USERNAME: "{example}"
+      PASSWORD: "{example}"
     ports:
       - 8761:8761
 
@@ -82,14 +92,14 @@ services:
     image: quay.io/keycloak/keycloak:24.0.2
     command: [ "start-dev", "--http-port=9321" ]
     environment:
-      KEYCLOAK_ADMIN: admin
-      KEYCLOAK_ADMIN_PASSWORD: admin
+      KEYCLOAK_ADMIN: "{example}"
+      KEYCLOAK_ADMIN_PASSWORD: "{example}"
       KC_HEALTH_ENABLED: true
       KC_HOSTNAME: localhost
-      KC_DB: keycloak-db
-      KC_DB_URL: jdbc:postgresql://postgres:5432/${KC_DB}
-      KC_DB_USERNAME: su
-      KC_DB_PASSWORD: su
+      KC_DB: postgres
+      KC_DB_URL: jdbc:postgresql://postgres:5432/{example}
+      KC_DB_USERNAME: "{example}"
+      KC_DB_PASSWORD: "{example}"
       KC_DB_SCHEMA: keycloak
     depends_on:
       - postgres
@@ -101,15 +111,15 @@ services:
     container_name: postgres
     image: postgres:16.2-alpine
     environment:
-      POSTGRES_DB: justedlev-db
-      POSTGRES_USER: su
-      POSTGRES_PASSWORD: su
+      POSTGRES_DB: "{example}"
+      POSTGRES_USER: "{example}"
+      POSTGRES_PASSWORD: "{example}"
     volumes:
       - db-data:/var/lib/postgresql/data
     ports:
       - 5432:5432
     healthcheck:
-      test: [ "CMD", "pg_isready" ]
+      test: [ "CMD", "pg_isready", "-U {example}", "-d" ]
       interval: 15s
       timeout: 10s
       retries: 5

@@ -5,4 +5,4 @@ eureka:
     appname: ${spring.application.name}
   client:
     service-url:
-      defaultZone: ${SERVICE_REGISTRY}
+      defaultZone: ${SERVICE_DISCOVERY_ZONE}
