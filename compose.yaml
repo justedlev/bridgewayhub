@@ -65,10 +65,11 @@ services:
       POSTGRES_PASSWORD: "{example}"
     volumes:
       - db-data:/var/lib/postgresql/data
+      - /.db:/docker-entrypoint-initdb.d
     ports:
       - 5432:5432
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U justedlev", "-d" ]
+      test: [ "CMD", "pg_isready", "-U", "justedlev", "-d" ]
       interval: 15s
       timeout: 10s
       retries: 5

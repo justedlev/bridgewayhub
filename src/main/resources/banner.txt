@@ -1,9 +1,9 @@
-     _           _           _ _                 __                         __
-    | |_   _ ___| |_ ___  __| | | _____   __    / /                         \ \
- _  | | | | / __| __/ _ \/ _` | |/ _ \ \ / /   | |   _____           _____   | |
-| |_| | |_| \__ \ ||  __/ (_| | |  __/\ V /   < <   |_____|         |_____|   > >
- \___/ \__,_|___/\__\___|\__,_|_|\___| \_/     | |          (_|_|_)          | |
-                                                \_\                         /_/
- ${spring.application.name} :: ${application.title}
- ${application.formatted-version}
- ${AnsiColor.GREEN}:: Spring Boot ::${AnsiColor.DEFAULT}${spring-boot.formatted-version}
+                                                 __                         __
+     _           _           _ _                / /                         \ \
+    | |_   _ ___| |_ ___  __| | | _____   __   | |   _____           _____   | |
+ _  | | | | / __| __/ _ \/ _` | |/ _ \ \ / /  < <   |_____|         |_____|   > >
+| |_| | |_| \__ \ ||  __/ (_| | |  __/\ V /    | |          (_|_|_)          | |
+ \___/ \__,_|___/\__\___|\__,_|_|\___| \_/      \_\                         /_/
+${spring.application.name}${application.formatted-version}
+${application.title}
+${AnsiColor.GREEN}Spring Boot${AnsiColor.DEFAULT}${spring-boot.formatted-version}
