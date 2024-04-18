@@ -32,6 +32,7 @@ services:
     environment:
       USERNAME: "{example}"
       PASSWORD: "{example}"
+      SERVICE_DISCOVERY_ZONE: http://service-discovery:8761/eureka
     ports:
       - 8761:8761
 
