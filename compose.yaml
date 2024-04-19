@@ -30,9 +30,9 @@ services:
     container_name: service-discovery
     image: justedlev/simple-eureka-server:1.0.0-SNAPSHOT
     environment:
-      USERNAME: justedlev
-      PASSWORD: SnVzdDk2bHlrM0Bk
-      SERVICE_DISCOVERY_ZONE: http://service-discovery:8761/eureka
+      USERNAME: "{example}"
+      PASSWORD: "{example}"
+      SERVICE_DISCOVERY_ZONE: http://{example}:{example}@service-discovery:8761/eureka
     ports:
       - 8761:8761
 
