@@ -22,7 +22,7 @@ spring:
     user:
       name: ${USERNAME:Justedlev}
       password: ${PASSWORD}
-      roles: ${ROLES}
+      roles: ${ROLES:system}
     oauth2:
       resourceserver:
         jwt:
