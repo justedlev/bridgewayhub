@@ -1,6 +1,7 @@
-package io.github.justedlev.microservice.configuration.security;
+package dev.justedlev.configuration;
 
-import io.github.justedlev.microservice.configuration.properties.SecurityProperties;
+import dev.justedlev.component.KeycloakLogoutHandler;
+import dev.justedlev.configuration.properties.SecurityProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -27,7 +28,8 @@ public class SecurityConfiguration {
         return httpSecurity
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .formLogin(ServerHttpSecurity.FormLoginSpec::disable)
-                .oauth2ResourceServer(serverSpec -> serverSpec.jwt(Customizer.withDefaults()))
+                .oauth2Login(Customizer.withDefaults())
+                .oauth2ResourceServer(spec -> spec.jwt(Customizer.withDefaults()))
                 .logout(logoutHandler -> logoutHandler
                         .logoutUrl(LOGOUT)
                         .logoutHandler(keycloakLogoutHandler)
@@ -37,7 +39,7 @@ public class SecurityConfiguration {
                                         .then()
                         )
                 )
-                .authorizeExchange(exchangeSpec -> exchangeSpec
+                .authorizeExchange(spec -> spec
                         .pathMatchers(securityProperties.getWhiteListArray()).permitAll()
                         .anyExchange().authenticated()
                 )

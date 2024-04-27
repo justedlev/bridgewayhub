@@ -1,6 +1,6 @@
-package io.github.justedlev.microservice.configuration;
+package dev.justedlev.configuration;
 
-import io.github.justedlev.microservice.configuration.properties.KeycloakProperties;
+import dev.justedlev.configuration.properties.KeycloakProperties;
 import org.keycloak.OAuth2Constants;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.KeycloakBuilder;

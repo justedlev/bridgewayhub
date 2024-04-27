@@ -1,3 +1,35 @@
+spring:
+  security:
+    user:
+      name: ${USERNAME:Justedlev}
+      password: ${PASSWORD}
+      roles: ${ROLES:system}
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            token-uri: ${keycloak.token-uri}
+            authorization-uri: ${keycloak.auth-uri}
+            user-name-attribute: preferred_username
+            user-info-uri: ${keycloak.user-info-uri}
+            jwk-set-uri: ${keycloak.jwks-uri}
+            user-info-authentication-method: header
+        registration:
+          bridgewayhub:
+            provider: keycloak
+            client-id: ${keycloak.client.id}
+            client-secret: ${keycloak.client.secret}
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:${server.port}/login/oauth2/code/keycloak
+            scope: openid
+      resourceserver:
+        jwt:
+          issuer-uri: ${keycloak.issuer-uri}
+          jwk-set-uri: ${keycloak.jwks-uri}
+        opaquetoken:
+          introspection-uri: ${keycloak.introspection-uri}
+          client-id: ${keycloak.client.id}
+          client-secret: ${keycloak.client.secret}
 security:
   white-list:
     - /webjars/**

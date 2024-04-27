@@ -1,4 +1,4 @@
-package io.github.justedlev.microservice.configuration.properties;
+package dev.justedlev.configuration.properties;
 
 import lombok.Getter;
 import lombok.Setter;

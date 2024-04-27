@@ -4,6 +4,9 @@ springdoc:
     enabled: true
   swagger-ui:
     enabled: true
+    oauth:
+      client-id: ${keycloak.client.id}
+      client-secret: ${keycloak.client.secret}
     urls:
       - url: /service-1/api/v3/api-docs
         name: 'Service N1 APIs'
