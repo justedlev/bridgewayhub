@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- File appender of DEBUG level logback configuration provided for import -->
+
+<included>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+    <property name="DEBUG_LOG_FILE" value="${DEBUG_LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/debug.log}"/>
+    <property name="DEBUG_LOG_FILE_PATTERN" value="${DEBUG_LOG_FILE_PATTERN:-${FILE_LOG_PATTERN}}"/>
+    <appender name="DEBUG_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder>
+            <pattern>${DEBUG_LOG_FILE_PATTERN}</pattern>
+        </encoder>
+        <file>${DEBUG_LOG_FILE}</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <cleanHistoryOnStart>${DEBUG_LOG_FILE_CLEAN_HISTORY_ON_START:-false}</cleanHistoryOnStart>
+            <fileNamePattern>${DEBUG_ROLLING_FILE_NAME_PATTERN:-${DEBUG_LOG_FILE}.%d{yyyy-MM-dd}.%i.gz}
+            </fileNamePattern>
+            <maxFileSize>${DEBUG_LOG_FILE_MAX_SIZE:-200MB}</maxFileSize>
+            <maxHistory>${DEBUG_LOG_FILE_MAX_HISTORY:-7}</maxHistory>
+            <totalSizeCap>${DEBUG_LOG_FILE_TOTAL_SIZE_CAP:-0}</totalSizeCap>
+        </rollingPolicy>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>DEBUG</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+    </appender>
+</included>
