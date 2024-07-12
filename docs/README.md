@@ -18,7 +18,7 @@
 
 __BridgeWay Hub__ it's an *API Gateway* for easy launch and using, based on the Spring framework 6,
 keycloak as a security layer and eureka client for registration in the service discovery, etc.
-You can see the all dependencies [here](pom.xml)
+You can see the all dependencies [here](../pom.xml)
 
 ## ⚠️ Requirements
 
@@ -33,9 +33,9 @@ Before running the app you need to configure the next services that depends on:
 ### 🛠️ Intellij
 
 Clone the repository using `git clone https://github.com/Justedlev/bridgewayhub.git` and after that run the app local,
-you can use the simple [run configuration](.run%2FDefault.run.xml), that based on [.env](.env)
-and [jvm options](.vmoptions), make sure that the service registry (eureka service) already started
-or disable the dependency in [pom.xml](pom.xml)
+you can use the simple [run configuration](.run%2FDefault.run.xml), that based on [.env](../.env)
+and [jvm options](../.vmoptions), make sure that the service registry (eureka service) already started
+or disable the dependency in [pom.xml](../pom.xml)
 
 ### 🚢 Docker
 
@@ -54,7 +54,7 @@ services:
     container_name: bridgewayhub
     image: justedlev/bridgewayhub:0.0.1-SNAPSHOT
     build:
-      context: .
+      context: ..
     environment:
       SERVICE_REGISTRY: http://{example}:{example}@service-discovery:8761/eureka
       ORIGINS: http://service-discovery:8761,http://localhost:8761,http://localhost:3000
