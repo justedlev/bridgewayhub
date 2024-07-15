@@ -33,5 +33,5 @@ build/
 .vscode/
 
 /.logs/
-/.mvn/
 /.db/
+!/.mvn/**/*.jar
