@@ -34,4 +34,4 @@ build/
 
 /.logs/
 /.db/
-!/.mvn/**/*.jar
+/.mvn/**/*.jar
