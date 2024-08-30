@@ -27,7 +27,6 @@ public class SecurityConfiguration {
     public SecurityWebFilterChain securityFilterChain(@NonNull ServerHttpSecurity httpSecurity) {
         return httpSecurity
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
-                .formLogin(ServerHttpSecurity.FormLoginSpec::disable)
                 .oauth2Login(Customizer.withDefaults())
                 .oauth2ResourceServer(spec -> spec.jwt(Customizer.withDefaults()))
                 .logout(logoutHandler -> logoutHandler

@@ -9,10 +9,11 @@ spring:
         provider:
           keycloak:
             token-uri: ${keycloak.token-uri}
+            issuer-uri: ${keycloak.issuer-uri}
             authorization-uri: ${keycloak.auth-uri}
-            user-name-attribute: preferred_username
-            user-info-uri: ${keycloak.user-info-uri}
             jwk-set-uri: ${keycloak.jwks-uri}
+            user-info-uri: ${keycloak.user-info-uri}
+            user-name-attribute: preferred_username
             user-info-authentication-method: header
         registration:
           bridgewayhub:
@@ -20,8 +21,11 @@ spring:
             client-id: ${keycloak.client.id}
             client-secret: ${keycloak.client.secret}
             authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:${server.port}/login/oauth2/code/keycloak
-            scope: openid
+            redirect-uri: http://localhost:${server.port}/login/oauth2/code/{registrationId}
+            scope:
+              - openid
+              - profile
+              - email
       resourceserver:
         jwt:
           issuer-uri: ${keycloak.issuer-uri}

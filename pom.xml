@@ -13,6 +13,15 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>bridgewayhub</name>
     <description>API Gateway</description>
+    <developers>
+        <developer>
+            <id>justedlev</id>
+            <name>Edward L.</name>
+            <email>jvstedlev@gmail.com</email>
+            <url>https://github.com/Justedlev</url>
+            <timezone>Asia/Jerusalem</timezone>
+        </developer>
+    </developers>
     <properties>
         <java.version>17</java.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -20,7 +29,6 @@
         <jar.manifest.packageName>dev.justedlev</jar.manifest.packageName>
 
         <spring-cloud.version>2023.0.2</spring-cloud.version>
-        <keycloak.version>25.0.1</keycloak.version>
         <springdoc.openapi.version>2.6.0</springdoc.openapi.version>
     </properties>
     <dependencyManagement>
@@ -77,11 +85,6 @@
             <optional>true</optional>
         </dependency>
         <dependency>
-            <groupId>org.keycloak</groupId>
-            <artifactId>keycloak-admin-client</artifactId>
-            <version>${keycloak.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
@@ -126,7 +129,6 @@
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <target>${maven.compiler.target}</target>
-                    <compilerArgs>--enable-preview</compilerArgs>
                 </configuration>
             </plugin>
             <plugin>
@@ -148,14 +150,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <developers>
-        <developer>
-            <id>justedlev</id>
-            <name>Edward L.</name>
-            <email>jvstedlev@gmail.com</email>
-            <url>https://github.com/Justedlev</url>
-            <timezone>Asia/Jerusalem</timezone>
-        </developer>
-    </developers>
 </project>

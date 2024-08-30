@@ -17,10 +17,10 @@ import org.springframework.cloud.context.config.annotation.RefreshScope;
         SecurityProperties.class,
 })
 @SpringBootApplication
-public class BridgewayhubApplication {
+public class BridgeWayHubApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(BridgewayhubApplication.class, args);
+        SpringApplication.run(BridgeWayHubApplication.class, args);
     }
 
 }

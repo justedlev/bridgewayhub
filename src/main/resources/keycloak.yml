@@ -7,14 +7,12 @@ keycloak:
   realm: ${KC_REALM}
   auth-uri: ${KC_AUTH_URI}
   user-info-uri: ${KC_USER_INFO_URI}
+  logout-uri: ${KC_LOGOUT_URI}
   client:
     name: bridgewayhub
     id: ${KC_CLIENT_ID}
     secret: ${KC_CLIENT_SECRET}
     username: su
     password: su
-  jwt-converter:
-    role-claims: realm_access.roles,resource_access.account.roles
-    username-attribute: preferred_username
   user-groups:
     - f9fef35f-a9cc-4ac1-a164-e9755700d56e
