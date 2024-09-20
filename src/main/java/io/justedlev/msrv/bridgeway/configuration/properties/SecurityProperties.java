@@ -1,4 +1,4 @@
-package dev.justedlev.configuration.properties;
+package io.justedlev.msrv.bridgeway.configuration.properties;
 
 import lombok.Getter;
 import lombok.Setter;

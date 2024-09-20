@@ -1,8 +1,8 @@
-package dev.justedlev;
+package io.justedlev.msrv.bridgeway;
 
-import dev.justedlev.configuration.properties.KeycloakClientProperties;
-import dev.justedlev.configuration.properties.KeycloakProperties;
-import dev.justedlev.configuration.properties.SecurityProperties;
+import io.justedlev.msrv.bridgeway.configuration.properties.KeycloakClientProperties;
+import io.justedlev.msrv.bridgeway.configuration.properties.KeycloakProperties;
+import io.justedlev.msrv.bridgeway.configuration.properties.SecurityProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

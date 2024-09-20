@@ -1,7 +1,7 @@
-package dev.justedlev.configuration;
+package io.justedlev.msrv.bridgeway.configuration;
 
-import dev.justedlev.component.KeycloakLogoutHandler;
-import dev.justedlev.configuration.properties.SecurityProperties;
+import io.justedlev.msrv.bridgeway.component.KeycloakLogoutHandler;
+import io.justedlev.msrv.bridgeway.configuration.properties.SecurityProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
