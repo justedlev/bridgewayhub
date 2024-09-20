@@ -28,7 +28,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <jar.manifest.packageName>dev.justedlev</jar.manifest.packageName>
 
-        <spring-cloud.version>2023.0.2</spring-cloud.version>
+        <spring-cloud.version>2023.0.3</spring-cloud.version>
         <springdoc.openapi.version>2.6.0</springdoc.openapi.version>
     </properties>
     <dependencyManagement>
