@@ -11,6 +11,10 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
 
+/**
+ * @deprecated {@link org.springframework.security.oauth2.client.oidc.web.server.logout.OidcClientInitiatedServerLogoutSuccessHandler} applied instead
+ */
+@Deprecated(forRemoval = true)
 @Slf4j
 @Component
 @RequiredArgsConstructor
