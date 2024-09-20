@@ -37,16 +37,16 @@ you can use the simple [run configuration](.run%2FDefault.run.xml), that based o
 and [jvm options](../.vmoptions), make sure that the service registry (eureka service) already started.
 
 > [!NOTE]
-> The Discovery Service can be disabled by using the 
+> The Discovery Service can be disabled by using the property 👇 in [application.yml](..%2Fsrc%2Fmain%2Fresources%2Fapplication.yml)
 > ```yml 
 > spring:
 >   cloud:
 >     discovery:
 >       enabled: false
 > ```
-> property in [application.yml](..%2Fsrc%2Fmain%2Fresources%2Fapplication.yml)
-> > [!TIP]
-> > You can also disable it in [.vmoptions](..%2F.vmoptions), just adding the env `-Dspring.cloud.discovery.enabled=false`
+
+> [!TIP]
+> You can also disable it in [.vmoptions](..%2F.vmoptions), just adding the env `-Dspring.cloud.discovery.enabled=false`
 
 ### <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/refs/heads/master/src/images/icons/Devops/docker.svg" width="20"/> Docker
 
