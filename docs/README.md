@@ -54,7 +54,10 @@ I have a repository on [Docker Hub](https://hub.docker.com/repository/docker/jus
 
 ### 📝 Docker compose
 
-Simple command to run the container: `docker compose up -d --build`
+Simple command to run the container: 
+``` shell
+docker compose up -d --build
+```
 
 The full compose.yaml that I personally use
 
