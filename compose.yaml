@@ -19,8 +19,9 @@ services:
       KC_INTROSPECTION_ENDPOINT: ${KC_ISSUER_URI}/protocol/openid-connect/token/introspect
       KC_CLIENT_ID: "{example}"
       KC_CLIENT_SECRET: "{example}"
+      KC_LOGOUT_URI: ${KC_ISSUER_URI}/protocol/openid-connect/logout
     ports:
-      - 8123:8123
+      - "8123:8123"
     depends_on:
       - sso
       - service-discovery
@@ -34,7 +35,7 @@ services:
       PASSWORD: "{example}"
       SERVICE_DISCOVERY_ZONE: http://{example}:{example}@service-discovery:8761/eureka
     ports:
-      - 8761:8761
+      - "8761:8761"
 
   # SSO service (keycloak)
   sso:
@@ -54,7 +55,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - 9321:9321
+      - "9321:9321"
 
   # Postgres DB
   postgres:
@@ -68,7 +69,7 @@ services:
       - db-data:/var/lib/postgresql/data
       - /.db:/docker-entrypoint-initdb.d
     ports:
-      - 5432:5432
+      - "5432:5432"
     healthcheck:
       test: [ "CMD", "pg_isready", "-U", "justedlev", "-d" ]
       interval: 15s
