@@ -8,7 +8,7 @@
         <version>3.3.3</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>io.github.justedlev.microservice</groupId>
+    <groupId>io.github.justedlev.msrv</groupId>
     <artifactId>bridgewayhub</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>bridgewayhub</name>
@@ -17,16 +17,16 @@
         <developer>
             <id>justedlev</id>
             <name>Edward L.</name>
-            <email>jvstedlev@gmail.com</email>
-            <url>https://github.com/Justedlev</url>
-            <timezone>Asia/Jerusalem</timezone>
+            <email>edyardlyk@gmail.com</email>
+            <url>https://github.com/justedlev</url>
         </developer>
     </developers>
     <properties>
         <java.version>17</java.version>
+        <encoding>UTF-8</encoding>
+        <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
-        <jar.manifest.packageName>dev.justedlev</jar.manifest.packageName>
 
         <spring-cloud.version>2023.0.3</spring-cloud.version>
         <springdoc.openapi.version>2.6.0</springdoc.openapi.version>
@@ -137,9 +137,6 @@
                 <version>3.4.2</version>
                 <configuration>
                     <archive>
-                        <manifest>
-                            <packageName>${jar.manifest.packageName}</packageName>
-                        </manifest>
                         <manifestEntries>
                             <Created-By>Justedlev</Created-By>
                             <Implementation-Title>${project.description}</Implementation-Title>
