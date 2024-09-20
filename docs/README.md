@@ -16,8 +16,8 @@
 
 ## 📋 About
 
-__BridgeWay Hub__ it's an *API Gateway* for easy launch and using, based on the Spring framework 6,
-keycloak as a security layer and eureka client for registration in the service discovery, etc.
+__BridgeWay Hub__ it's an `API Gateway` for easy launch and using, based on the `Spring Boot 3`,
+`Keycloak` as a security layer and `Eureka` as service registry.
 You can see the all dependencies [here](../pom.xml)
 
 ## ⚠️ Requirements
@@ -30,18 +30,29 @@ Before running the app you need to configure the next services that depends on:
 
 ## ▶️ Run
 
-### 🛠️ Intellij
+### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/intellij/intellij-original.svg" width="20"/> Intellij
 
 Clone the repository using `git clone https://github.com/Justedlev/bridgewayhub.git` and after that run the app local,
 you can use the simple [run configuration](.run%2FDefault.run.xml), that based on [.env](../.env)
-and [jvm options](../.vmoptions), make sure that the service registry (eureka service) already started
-or disable the dependency in [pom.xml](../pom.xml)
+and [jvm options](../.vmoptions), make sure that the service registry (eureka service) already started.
 
-### 🚢 Docker
+> [!NOTE]
+> The Discovery Service can be disabled by using the 
+> ```yml 
+> spring:
+>   cloud:
+>     discovery:
+>       enabled: false
+> ```
+> property in [application.yml](..%2Fsrc%2Fmain%2Fresources%2Fapplication.yml)
+> > [!TIP]
+> > You can also disable it in [.vmoptions](..%2F.vmoptions), just adding the env `-Dspring.cloud.discovery.enabled=false`
+
+### <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/refs/heads/master/src/images/icons/Devops/docker.svg" width="20"/> Docker
 
 I have a repository on [Docker Hub](https://hub.docker.com/repository/docker/justedlev/bridgewayhub/general)
 
-### 🗂️ Docker compose
+### 📝 Docker compose
 
 Simple command to run the container: `docker compose up -d --build`
 
