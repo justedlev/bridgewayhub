@@ -33,7 +33,7 @@ Before running the app you need to configure the next services that depends on:
 ### <a href="#"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/intellij/intellij-original.svg" width="20"/></a> Intellij
 
 Clone the repository using `git clone https://github.com/Justedlev/bridgewayhub.git` and after that run the app local,
-you can use the simple [run configuration](.run%2FDefault.run.xml), that based on [.env](../.env)
+you can use the simple [run configuration](..%2F.run%2FDefault.run.xml), that based on [.env](../.env)
 and [jvm options](../.vmoptions), make sure that the service registry (eureka service) already started.
 
 > [!NOTE]
