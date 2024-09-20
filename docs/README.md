@@ -30,7 +30,7 @@ Before running the app you need to configure the next services that depends on:
 
 ## ▶️ Run
 
-### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/intellij/intellij-original.svg" width="20"/> Intellij
+### <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/intellij/intellij-original.svg" width="20" style="pointer-events: none; cursore=default"/> Intellij
 
 Clone the repository using `git clone https://github.com/Justedlev/bridgewayhub.git` and after that run the app local,
 you can use the simple [run configuration](.run%2FDefault.run.xml), that based on [.env](../.env)
@@ -48,7 +48,7 @@ and [jvm options](../.vmoptions), make sure that the service registry (eureka se
 > [!TIP]
 > You can also disable it in [.vmoptions](..%2F.vmoptions), just adding the env `-Dspring.cloud.discovery.enabled=false`
 
-### <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/refs/heads/master/src/images/icons/Devops/docker.svg" width="20"/> Docker
+### <img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/refs/heads/master/src/images/icons/Devops/docker.svg" width="20" style="pointer-events: none; cursore=default"/> Docker
 
 I have a repository on [Docker Hub](https://hub.docker.com/repository/docker/justedlev/bridgewayhub/general)
 
