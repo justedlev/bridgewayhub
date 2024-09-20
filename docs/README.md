@@ -37,16 +37,23 @@ you can use the simple [run configuration](..%2F.run%2FDefault.run.xml), that ba
 and [jvm options](../.vmoptions), make sure that the service registry (eureka service) already started.
 
 > [!NOTE]
-> The Discovery Service can be disabled by using the property 👇 in [application.yml](..%2Fsrc%2Fmain%2Fresources%2Fapplication.yml)
+> The Service Registry (Discovery Service) can be disabled by using the properties if needed
 > ```yml 
 > spring:
 >   cloud:
 >     discovery:
 >       enabled: false
+> eureka:
+>   client:
+>     enabled: false
 > ```
 
 > [!TIP]
-> You can also disable it in [.vmoptions](..%2F.vmoptions), just adding the env `-Dspring.cloud.discovery.enabled=false`
+> You can also disable it in [.vmoptions](..%2F.vmoptions), just adding the envs
+> ```
+> -Dspring.cloud.discovery.enabled=false
+> -Deureka.client.enabled=false
+> ```
 
 ### <a href="#"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/refs/heads/master/src/images/icons/Devops/docker.svg" width="20"/></a> Docker
 
@@ -55,13 +62,13 @@ I have a repository on [Docker Hub](https://hub.docker.com/repository/docker/jus
 ### 📝 Docker compose
 
 Simple command to run the container: 
-``` shell
+```shell
 docker compose up -d --build
 ```
 
 The full compose.yaml that I personally use
 
-```yaml
+```yml
 name: justedlev-microservice
 services:
   bridgewayhub:
