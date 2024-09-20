@@ -11,14 +11,14 @@ services:
       USERNAME: "{example}"
       PASSWORD: "{example}"
       ROLES: admin,user,editor,owner
-      KEYCLOAK_HOST: http://sso:9321
-      KEYCLOAK_REALM: "{example}"
-      KEYCLOAK_ISSUER_URI: ${KEYCLOAK_HOST}/realms/${KEYCLOAK_REALM}
-      KEYCLOAK_JWKS_URI: ${KEYCLOAK_ISSUER_URI}/protocol/openid-connect/certs
-      KEYCLOAK_TOKEN_ENDPOINT: ${KEYCLOAK_ISSUER_URI}/protocol/openid-connect/token
-      KEYCLOAK_INTROSPECTION_ENDPOINT: ${KEYCLOAK_ISSUER_URI}/protocol/openid-connect/token/introspect
-      KEYCLOAK_CLIENT_ID: "{example}"
-      KEYCLOAK_CLIENT_SECRET: "{example}"
+      KC_HOST: http://sso:9321
+      KC_REALM: "{example}"
+      KC_ISSUER_URI: ${KC_HOST}/realms/${KC_REALM}
+      KC_JWKS_URI: ${KC_ISSUER_URI}/protocol/openid-connect/certs
+      KC_TOKEN_ENDPOINT: ${KC_ISSUER_URI}/protocol/openid-connect/token
+      KC_INTROSPECTION_ENDPOINT: ${KC_ISSUER_URI}/protocol/openid-connect/token/introspect
+      KC_CLIENT_ID: "{example}"
+      KC_CLIENT_SECRET: "{example}"
     ports:
       - 8123:8123
     depends_on:
