@@ -5,11 +5,11 @@
 
 <div id="badges" align="center">
 
-[![language](https://img.shields.io/badge/Java%2017-e6892e.svg?logo=openjdk&logoColor=white)](https://github.com/Justedlev/bridgewayhub)
-[![framework](https://img.shields.io/badge/Spring%20Boot%203-6DB33F.svg?logo=springboot&logoColor=white)](https://github.com/Justedlev/bridgewayhub)
-[![license](https://img.shields.io/github/license/Justedlev/bridgewayhub)](https://www.apache.org/licenses/LICENSE-2.0.txt)
-[![stars](https://img.shields.io/github/stars/Justedlev/bridgewayhub)](https://github.com/Justedlev/bridgewayhub/star)
-[![issues](https://img.shields.io/github/issues/Justedlev/bridgewayhub)](https://github.com/Justedlev/bridgewayhub/issues)
+[![language](https://img.shields.io/badge/Java%2017-e6892e.svg?logo=openjdk&logoColor=white)](https://github.com/justedlev/bridgewayhub)
+[![framework](https://img.shields.io/badge/Spring%20Boot%203-6DB33F.svg?logo=springboot&logoColor=white)](https://docs.spring.io/spring-boot/index.html)
+[![license](https://img.shields.io/github/license/justedlev/bridgewayhub)](https://www.apache.org/licenses/LICENSE-2.0.txt)
+[![stars](https://img.shields.io/github/stars/justedlev/bridgewayhub)](https://github.com/justedlev/bridgewayhub/star)
+[![issues](https://img.shields.io/github/issues/justedlev/bridgewayhub)](https://github.com/justedlev/bridgewayhub/issues)
 
 </div>
 
