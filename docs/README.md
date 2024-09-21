@@ -25,8 +25,8 @@ additional business requirements and is applied in the application properties. [
 Before running the app you need to configure the next services that depends on:
 
 - Keycloak - security layer
-- DB for Keycloak (optional)
-- Eureka Server, my [solution](https://github.com/Justedlev/simple-eureka-server) (optional)
+- DB for Keycloak `optional`
+- Eureka Server, my [solution](https://github.com/Justedlev/simple-eureka-server) `optional`
 
 ## ▶️ Run
 
@@ -65,6 +65,8 @@ Simple command to run the container:
 ```shell
 docker compose up -d --build
 ```
+
+Learn More with Docker CLI: [Compose](https://docs.docker.com/reference/cli/docker/compose/)
 
 The full compose.yaml that I personally use
 
