@@ -16,17 +16,17 @@
 
 ## 📋 About
 
-__BridgeWay Hub__ it's an `API Gateway` for easy launch and using, based on the `Spring Boot 3`,
-`Keycloak` as a security layer and `Eureka` as service registry.
-You can see the all dependencies [here](../pom.xml)
+__BridgeWay Hub__ example implementation of `API Gateway` based on `Spring Boot 3`, `Keycloak` as a security layer 
+and `Eureka Client` as service registry, in microservice architecture, detailed configuration will depend directly on 
+additional business requirements and is applied in the application properties. [For more details](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/)
 
 ## ⚠️ Requirements
 
 Before running the app you need to configure the next services that depends on:
 
-- Keycloak
-- DB for Keycloak if needed
-- Eureka Server, my [solution](https://github.com/Justedlev/simple-eureka-server)
+- Keycloak - security layer
+- DB for Keycloak (optional)
+- Eureka Server, my [solution](https://github.com/Justedlev/simple-eureka-server) (optional)
 
 ## ▶️ Run
 
@@ -59,7 +59,7 @@ and [jvm options](../.vmoptions), make sure that the service registry (eureka se
 
 I have a repository on [Docker Hub](https://hub.docker.com/repository/docker/justedlev/bridgewayhub/general)
 
-### 📝 Docker compose
+#### 📝 Docker compose
 
 Simple command to run the container: 
 ```shell
@@ -79,17 +79,20 @@ services:
     environment:
       SERVICE_REGISTRY: http://{example}:{example}@service-discovery:8761/eureka
       ORIGINS: http://service-discovery:8761,http://localhost:8761,http://localhost:3000
-      USERNAME: "{example}"
-      PASSWORD: "{example}"
-      ROLES: admin,user,editor,owner
+      USERNAME: "{changeme}"
+      PASSWORD: "{changeme}"
+      ROLES:
+        - "{changeme}"
+        - "{changeme2}"
+        - "{changeme-etc}"
       KEYCLOAK_HOST: http://sso:9321
-      KEYCLOAK_REALM: "{example}"
+      KEYCLOAK_REALM: "{changeme}"
       KEYCLOAK_ISSUER_URI: ${KEYCLOAK_HOST}/realms/${KEYCLOAK_REALM}
       KEYCLOAK_JWKS_URI: ${KEYCLOAK_ISSUER_URI}/protocol/openid-connect/certs
       KEYCLOAK_TOKEN_ENDPOINT: ${KEYCLOAK_ISSUER_URI}/protocol/openid-connect/token
       KEYCLOAK_INTROSPECTION_ENDPOINT: ${KEYCLOAK_ISSUER_URI}/protocol/openid-connect/token/introspect
-      KEYCLOAK_CLIENT_ID: "{example}"
-      KEYCLOAK_CLIENT_SECRET: "{example}"
+      KEYCLOAK_CLIENT_ID: "{changeme}"
+      KEYCLOAK_CLIENT_SECRET: "{changeme}"
     ports:
       - 8123:8123
     depends_on:
@@ -101,8 +104,8 @@ services:
     container_name: service-discovery
     image: justedlev/simple-eureka-server:1.0.0-SNAPSHOT
     environment:
-      USERNAME: "{example}"
-      PASSWORD: "{example}"
+      USERNAME: "{changeme}"
+      PASSWORD: "{changeme}"
     ports:
       - 8761:8761
 
@@ -112,14 +115,14 @@ services:
     image: quay.io/keycloak/keycloak:24.0.2
     command: [ "start-dev", "--http-port=9321" ]
     environment:
-      KEYCLOAK_ADMIN: "{example}"
-      KEYCLOAK_ADMIN_PASSWORD: "{example}"
+      KEYCLOAK_ADMIN: "{changeme}"
+      KEYCLOAK_ADMIN_PASSWORD: "{changeme}"
       KC_HEALTH_ENABLED: true
       KC_HOSTNAME: localhost
       KC_DB: postgres
       KC_DB_URL: jdbc:postgresql://postgres:5432/{example}
-      KC_DB_USERNAME: "{example}"
-      KC_DB_PASSWORD: "{example}"
+      KC_DB_USERNAME: "{changeme}"
+      KC_DB_PASSWORD: "{changeme}"
       KC_DB_SCHEMA: keycloak
     depends_on:
       - postgres
@@ -131,15 +134,15 @@ services:
     container_name: postgres
     image: postgres:16.2-alpine
     environment:
-      POSTGRES_DB: "{example}"
-      POSTGRES_USER: "{example}"
-      POSTGRES_PASSWORD: "{example}"
+      POSTGRES_DB: "{changeme}"
+      POSTGRES_USER: "{changeme}"
+      POSTGRES_PASSWORD: "{changeme}"
     volumes:
       - db-data:/var/lib/postgresql/data
     ports:
       - 5432:5432
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U {example}", "-d" ]
+      test: [ "CMD", "pg_isready", "-U ${POSTGRES_USER}", "-d" ]
       interval: 15s
       timeout: 10s
       retries: 5
