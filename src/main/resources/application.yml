@@ -6,7 +6,7 @@ server:
 spring:
   config:
     import:
-      - classpath:/keycloak.yml
+      - classpath:/server.yml
       - classpath:/springdoc.yml
       - classpath:/management.yml
       - classpath:/eureka.yml
