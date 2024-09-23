@@ -1,25 +1,25 @@
 spring:
   security:
     user:
-      name: ${USERNAME:Justedlev}
+      name: ${USERNAME:BridgeWay}
       password: ${PASSWORD}
       roles: ${ROLES:system}
     oauth2:
       client:
         provider:
           keycloak:
-            token-uri: ${keycloak.token-uri}
-            issuer-uri: ${keycloak.issuer-uri}
-            authorization-uri: ${keycloak.auth-uri}
-            jwk-set-uri: ${keycloak.jwks-uri}
-            user-info-uri: ${keycloak.user-info-uri}
+            token-uri: ${KC_TOKEN_URI}
+            issuer-uri: ${KC_ISSUER_URI}
+            authorization-uri: ${KC_AUTH_URI}
+            jwk-set-uri: ${KC_JWKS_URI}
+            user-info-uri: ${KC_USER_INFO_URI}
             user-name-attribute: preferred_username
             user-info-authentication-method: header
         registration:
           bridgewayhub:
             provider: keycloak
-            client-id: ${keycloak.client.id}
-            client-secret: ${keycloak.client.secret}
+            client-id: ${KC_CLIENT_ID}
+            client-secret: ${KC_CLIENT_SECRET}
             authorization-grant-type: authorization_code
             redirect-uri: http://localhost:${server.port}/login/oauth2/code/{registrationId}
             scope:
@@ -28,26 +28,26 @@ spring:
               - email
       resourceserver:
         jwt:
-          issuer-uri: ${keycloak.issuer-uri}
-          jwk-set-uri: ${keycloak.jwks-uri}
+          issuer-uri: ${KC_ISSUER_URI}
+          jwk-set-uri: ${KC_JWKS_URI}
         opaquetoken:
-          introspection-uri: ${keycloak.introspection-uri}
-          client-id: ${keycloak.client.id}
-          client-secret: ${keycloak.client.secret}
-security:
-  white-list:
-    - /webjars/**
-    - /v3/api-docs/**
-    - /*/v3/api-docs/**
-    - /*/*/v3/api-docs/**
-    - /swagger-ui.html
-    - /swagger-ui/**
-    - /swagger-resources
-    - /swagger-resources/**
-    - /configuration/ui
-    - /configuration/security
-    - /actuator/**
-    - /*/actuator/**
-    - /error
-    - /sso/logout
-    - /logout
+          introspection-uri: ${KC_INTROSPECTION_URI}
+          client-id: ${KC_CLIENT_ID}
+          client-secret: ${KC_CLIENT_SECRET}
+#security:
+#  whitelist:
+#    - /webjars/**
+#    - /v3/api-docs/**
+#    - /*/v3/api-docs/**
+#    - /*/*/v3/api-docs/**
+#    - /swagger-ui.html
+#    - /swagger-ui/**
+#    - /swagger-resources
+#    - /swagger-resources/**
+#    - /configuration/ui
+#    - /configuration/security
+#    - /actuator/**
+#    - /*/actuator/**
+#    - /error
+#    - /sso/logout
+#    - /logout
