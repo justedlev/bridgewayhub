@@ -1,8 +1,9 @@
 package io.justedlev.msrv.bridgeway.configuration;
 
-import io.justedlev.msrv.bridgeway.configuration.properties.SecurityProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.ArrayUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.NonNull;
@@ -18,7 +19,8 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @EnableWebFluxSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-    private final SecurityProperties securityProperties;
+    @Value("${security.whitelist:}")
+    private String[] whitelist;
 
     @Bean
     public SecurityWebFilterChain securityFilterChain(@NonNull ServerHttpSecurity httpSecurity,
@@ -30,9 +32,12 @@ public class SecurityConfiguration {
                 .logout(logoutSpec -> logoutSpec
                         .logoutSuccessHandler(new OidcClientInitiatedServerLogoutSuccessHandler(rcrr))
                 )
-                .authorizeExchange(spec -> spec
-                        .pathMatchers(securityProperties.getWhiteListArray()).permitAll()
-                        .anyExchange().authenticated()
+                .authorizeExchange(spec -> {
+                            if (ArrayUtils.isNotEmpty(whitelist)) {
+                                spec.pathMatchers(whitelist).permitAll();
+                            }
+                            spec.anyExchange().authenticated();
+                        }
                 )
                 .build();
     }
