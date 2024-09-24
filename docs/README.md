@@ -7,6 +7,7 @@
 
 [![language](https://img.shields.io/badge/Java%2017-e6892e.svg?logo=openjdk&logoColor=white)](https://github.com/justedlev/bridgewayhub)
 [![framework](https://img.shields.io/badge/Spring%20Boot%203-6DB33F.svg?logo=springboot&logoColor=white)](https://docs.spring.io/spring-boot/index.html)
+[![Docker Image Version](https://img.shields.io/docker/v/justedlev/bridgewayhub?logo=docker&label=bridgewayhub)](https://hub.docker.com/repository/docker/justedlev/bridgewayhub)
 [![license](https://img.shields.io/github/license/justedlev/bridgewayhub)](https://www.apache.org/licenses/LICENSE-2.0.txt)
 [![stars](https://img.shields.io/github/stars/justedlev/bridgewayhub)](https://github.com/justedlev/bridgewayhub/star)
 [![issues](https://img.shields.io/github/issues/justedlev/bridgewayhub)](https://github.com/justedlev/bridgewayhub/issues)
