@@ -30,6 +30,7 @@ services:
   service-discovery:
     container_name: service-discovery
     image: justedlev/simple-eureka-server:1.0.0-SNAPSHOT
+    image: justedlev/simple-eureka-server:1.1.0
     environment:
       USERNAME: "{example}"
       PASSWORD: "{example}"
@@ -40,7 +41,7 @@ services:
   # SSO service (keycloak)
   sso:
     container_name: keycloak
-    image: quay.io/keycloak/keycloak:24.0.2
+    image: quay.io/keycloak/keycloak:25.0.6
     command: [ "start-dev", "--http-port=9321" ]
     environment:
       KEYCLOAK_ADMIN: "{example}"
@@ -60,7 +61,7 @@ services:
   # Postgres DB
   postgres:
     container_name: postgres
-    image: postgres:16.2-alpine
+    image: postgres:16.4-alpine
     environment:
       POSTGRES_DB: "{example}"
       POSTGRES_USER: "{example}"
