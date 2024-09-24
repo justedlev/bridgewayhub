@@ -1,4 +1,4 @@
-name: justedlev-microservice
+name: justedlev-msrv
 services:
   bridgewayhub:
     container_name: bridgewayhub
@@ -24,12 +24,11 @@ services:
       - "8123:8123"
     depends_on:
       - sso
-      - service-discovery
+      - service-registry
 
   # Service discovery
-  service-discovery:
-    container_name: service-discovery
-    image: justedlev/simple-eureka-server:1.0.0-SNAPSHOT
+  service-registry:
+    container_name: service-registry
     image: justedlev/simple-eureka-server:1.1.0
     environment:
       USERNAME: "{example}"
@@ -72,7 +71,7 @@ services:
     ports:
       - "5432:5432"
     healthcheck:
-      test: [ "CMD", "pg_isready", "-U", "justedlev", "-d" ]
+      test: [ "CMD", "pg_isready", "-U", "${POSTGRES_USER}", "-d" ]
       interval: 15s
       timeout: 10s
       retries: 5
