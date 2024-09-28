@@ -78,23 +78,10 @@ services:
     image: justedlev/bridgewayhub:0.0.1-SNAPSHOT
     build:
       context: .
-    environment:
-      SERVICE_DISCOVERY_ZONE: http://{example}:{example}@service-discovery:8761/eureka
-      ORIGINS: http://service-discovery:8761,http://localhost:8761,http://localhost:3000
-      USERNAME: "{example}"
-      PASSWORD: "{example}"
-      ROLES: admin,user,editor,owner
-      KC_HOST: http://sso:9321
-      KC_REALM: "{example}"
-      KC_ISSUER_URI: ${KC_HOST}/realms/${KC_REALM}
-      KC_JWKS_URI: ${KC_ISSUER_URI}/protocol/openid-connect/certs
-      KC_TOKEN_ENDPOINT: ${KC_ISSUER_URI}/protocol/openid-connect/token
-      KC_INTROSPECTION_ENDPOINT: ${KC_ISSUER_URI}/protocol/openid-connect/token/introspect
-      KC_CLIENT_ID: "{example}"
-      KC_CLIENT_SECRET: "{example}"
-      KC_LOGOUT_URI: ${KC_ISSUER_URI}/protocol/openid-connect/logout
+    env_file:
+      - .env
     ports:
-      - "8123:8123"
+      - "8765:${SERVER_PORT}"
     depends_on:
       - sso
       - service-registry
@@ -102,19 +89,20 @@ services:
   # Service discovery
   service-registry:
     container_name: service-registry
-    image: justedlev/simple-eureka-server:1.1.0
+    image: justedlev/simple-eureka-server:latest
     environment:
-      USERNAME: "{example}"
-      PASSWORD: "{example}"
-      SERVICE_DISCOVERY_ZONE: http://{example}:{example}@service-discovery:8761/eureka
+      SERVER_PORT: 8761
+      EUREKA_INSTANCE_HOSTNAME: service-registry
+      SPRING_SECURITY_USER_NAME: example
+      SPRING_SECURITY_USER_PASSWORD: example
     ports:
-      - "8761:8761"
+      - "8761:${SERVER_PORT}"
 
   # SSO service (keycloak)
   sso:
     container_name: keycloak
     image: quay.io/keycloak/keycloak:25.0.6
-    command: [ "start-dev", "--http-port=9321" ]
+    command: [ "start-dev" ]
     environment:
       KEYCLOAK_ADMIN: "{example}"
       KEYCLOAK_ADMIN_PASSWORD: "{example}"
@@ -128,7 +116,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "9321:9321"
+      - "9321:8080"
 
   # Postgres DB
   postgres:
@@ -140,6 +128,7 @@ services:
       POSTGRES_PASSWORD: "{example}"
     volumes:
       - db-data:/var/lib/postgresql/data
+      - /.db:/docker-entrypoint-initdb.d
     ports:
       - "5432:5432"
     healthcheck:
