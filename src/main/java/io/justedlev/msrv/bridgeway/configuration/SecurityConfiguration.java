@@ -2,8 +2,6 @@ package io.justedlev.msrv.bridgeway.configuration;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.ArrayUtils;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.lang.NonNull;
@@ -19,8 +17,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @EnableWebFluxSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-    @Value("${security.whitelist:}")
-    private String[] whitelist;
+    private final SecurityProperties properties;
 
     @Bean
     public SecurityWebFilterChain securityFilterChain(@NonNull ServerHttpSecurity httpSecurity,
@@ -29,16 +26,13 @@ public class SecurityConfiguration {
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .oauth2Login(Customizer.withDefaults())
                 .oauth2ResourceServer(spec -> spec.jwt(Customizer.withDefaults()))
-                .logout(logoutSpec -> logoutSpec
+                .logout(spec -> spec
                         .logoutSuccessHandler(new OidcClientInitiatedServerLogoutSuccessHandler(rcrr))
                 )
                 .authorizeExchange(spec -> {
-                            if (ArrayUtils.isNotEmpty(whitelist)) {
-                                spec.pathMatchers(whitelist).permitAll();
-                            }
-                            spec.anyExchange().authenticated();
-                        }
-                )
+                    properties.getWhitelist().forEach((k, v) -> spec.pathMatchers(k, v).permitAll());
+                    spec.anyExchange().authenticated();
+                })
                 .build();
     }
 }
