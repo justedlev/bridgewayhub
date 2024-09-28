@@ -8,10 +8,10 @@
             <level>DEBUG</level>
         </filter>
         <encoder>
-            <pattern>${DEBUG_LOG_FILE_PATTERN:-${FILE_LOG_PATTERN}}</pattern>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
             <charset>${FILE_LOG_CHARSET}</charset>
         </encoder>
-        <file>${DEBUG_LOG_FILE:-${LOG_PATH}/debug.log}</file>
+        <file>${DEBUG_LOG_FILE}</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
             <fileNamePattern>${LOGBACK_ROLLINGPOLICY_DEBUG_FILE_NAME_PATTERN:-${DEBUG_LOG_FILE}.%d{yyyy-MM-dd}.%i.gz}</fileNamePattern>
             <cleanHistoryOnStart>${LOGBACK_ROLLINGPOLICY_CLEAN_HISTORY_ON_START:-false}</cleanHistoryOnStart>
