@@ -16,13 +16,14 @@ services:
   # Service discovery
   service-registry:
     container_name: service-registry
-    image: justedlev/simple-eureka-server:1.1.0
+    image: justedlev/simple-eureka-server:latest
     environment:
-      USERNAME: "{example}"
-      PASSWORD: "{example}"
-      SERVICE_DISCOVERY_ZONE: http://{example}:{example}@service-discovery:8761/eureka
+      SERVER_PORT: 8761
+      EUREKA_INSTANCE_HOSTNAME: service-registry
+      SPRING_SECURITY_USER_NAME: "{example}"
+      SPRING_SECURITY_USER_PASSWORD: "{example}"
     ports:
-      - "8761:8761"
+      - "8761:${SERVER_PORT}"
 
   # SSO service (keycloak)
   sso:
