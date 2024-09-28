@@ -8,7 +8,7 @@ services:
     env_file:
       - .env
     ports:
-      - "8123:8123"
+      - "8765:${SERVER_PORT}"
     depends_on:
       - sso
       - service-registry
