@@ -5,21 +5,8 @@ services:
     image: justedlev/bridgewayhub:0.0.1-SNAPSHOT
     build:
       context: .
-    environment:
-      SERVICE_DISCOVERY_ZONE: http://{example}:{example}@service-discovery:8761/eureka
-      ORIGINS: http://service-discovery:8761,http://localhost:8761,http://localhost:3000
-      USERNAME: "{example}"
-      PASSWORD: "{example}"
-      ROLES: admin,user,editor,owner
-      KC_HOST: http://sso:9321
-      KC_REALM: "{example}"
-      KC_ISSUER_URI: ${KC_HOST}/realms/${KC_REALM}
-      KC_JWKS_URI: ${KC_ISSUER_URI}/protocol/openid-connect/certs
-      KC_TOKEN_ENDPOINT: ${KC_ISSUER_URI}/protocol/openid-connect/token
-      KC_INTROSPECTION_ENDPOINT: ${KC_ISSUER_URI}/protocol/openid-connect/token/introspect
-      KC_CLIENT_ID: "{example}"
-      KC_CLIENT_SECRET: "{example}"
-      KC_LOGOUT_URI: ${KC_ISSUER_URI}/protocol/openid-connect/logout
+    env_file:
+      - .env
     ports:
       - "8123:8123"
     depends_on:
