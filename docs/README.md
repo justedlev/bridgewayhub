@@ -75,7 +75,7 @@ name: justedlev-msrv
 services:
   bridgewayhub:
     container_name: bridgewayhub
-    image: justedlev/bridgewayhub:0.0.1-SNAPSHOT
+    image: justedlev/bridgewayhub:latest
     build:
       context: .
     env_file:
