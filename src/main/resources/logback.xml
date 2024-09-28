@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-    <include resource="org/springframework/boot/logging/logback/default.xml" />
-    <property name="LOG_FILE" value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/spring.log}"/>
-    <include resource="logging/logback/console-appender.xml" />
-    <include resource="logging/logback/file-appender.xml" />
-    <include resource="logging/logback/debug-file-appender.xml"/>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <property name="DEBUG_LOG_FILE" value="${DEBUG_LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/debug.log}"/>
+    <include resource="io/justedlev/msrv/bridgeway/logging/debug-file-appender.xml"/>
 
-    <!-- Root Logger Configuration -->
-    <root level="DEBUG">
-        <appender-ref ref="STDOUT"/>
-        <appender-ref ref="FILE"/>
+    <logger name="root" level="debug" additivity="false">
         <appender-ref ref="DEBUG_FILE"/>
-    </root>
+    </logger>
 </configuration>

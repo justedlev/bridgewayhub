@@ -1,6 +1,5 @@
 package io.justedlev.msrv.bridgeway.configuration;
 
-import io.justedlev.msrv.bridgeway.configuration.properties.SecurityProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +17,7 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @EnableWebFluxSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-    private final SecurityProperties securityProperties;
+    private final SecurityProperties properties;
 
     @Bean
     public SecurityWebFilterChain securityFilterChain(@NonNull ServerHttpSecurity httpSecurity,
@@ -27,13 +26,13 @@ public class SecurityConfiguration {
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .oauth2Login(Customizer.withDefaults())
                 .oauth2ResourceServer(spec -> spec.jwt(Customizer.withDefaults()))
-                .logout(logoutSpec -> logoutSpec
+                .logout(spec -> spec
                         .logoutSuccessHandler(new OidcClientInitiatedServerLogoutSuccessHandler(rcrr))
                 )
-                .authorizeExchange(spec -> spec
-                        .pathMatchers(securityProperties.getWhiteListArray()).permitAll()
-                        .anyExchange().authenticated()
-                )
+                .authorizeExchange(spec -> {
+                    properties.getWhitelist().forEach((k, v) -> spec.pathMatchers(k, v).permitAll());
+                    spec.anyExchange().authenticated();
+                })
                 .build();
     }
 }

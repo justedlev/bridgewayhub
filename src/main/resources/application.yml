@@ -1,12 +1,7 @@
-server:
-  port: ${PORT:8765}
-  error:
-    include-stacktrace: never
-
 spring:
   config:
     import:
-      - classpath:/keycloak.yml
+      - classpath:/server.yml
       - classpath:/springdoc.yml
       - classpath:/management.yml
       - classpath:/eureka.yml
@@ -26,7 +21,7 @@ spring:
         corsConfigurations:
           '[/**]':
             allow-credentials: true
-            allowed-origins: ${ORIGINS:http://localhost:${server.port},http://localhost:3000}
+            allowed-origins: '*'
             allowed-headers: '*'
             allowed-methods: '*'
       discovery:
