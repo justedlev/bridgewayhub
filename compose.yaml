@@ -28,7 +28,7 @@ services:
   sso:
     container_name: keycloak
     image: quay.io/keycloak/keycloak:25.0.6
-    command: [ "start-dev", "--http-port=9321" ]
+    command: [ "start-dev" ]
     environment:
       KEYCLOAK_ADMIN: "{example}"
       KEYCLOAK_ADMIN_PASSWORD: "{example}"
@@ -42,7 +42,7 @@ services:
     depends_on:
       - postgres
     ports:
-      - "9321:9321"
+      - "9321:8080"
 
   # Postgres DB
   postgres:
