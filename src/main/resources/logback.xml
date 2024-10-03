@@ -2,7 +2,7 @@
 <configuration>
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
     <property name="DEBUG_LOG_FILE" value="${DEBUG_LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}}/debug.log}"/>
-    <include resource="io/justedlev/msrv/bridgeway/logging/debug-file-appender.xml"/>
+    <include resource="io/justedlev/logging/debug-file-appender.xml"/>
 
     <logger name="root" level="debug" additivity="false">
         <appender-ref ref="DEBUG_FILE"/>
