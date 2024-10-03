@@ -1,9 +1,9 @@
 spring:
   security:
     user:
-      name: ${USERNAME:BridgeWay}
-      password: ${PASSWORD}
-      roles: ${ROLES:system}
+      name: bridgeway
+      password: bridgeway
+      roles: system
     oauth2:
       client:
         provider:
