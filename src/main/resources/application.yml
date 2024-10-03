@@ -1,6 +1,7 @@
 spring:
   config:
     import:
+      - 'optional:configserver:'
       - classpath:/server.yml
       - classpath:/springdoc.yml
       - classpath:/management.yml
@@ -16,6 +17,8 @@ spring:
     livereload:
       enabled: false
   cloud:
+    config:
+      enabled: false
     gateway:
       globalcors:
         corsConfigurations:
