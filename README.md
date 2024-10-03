@@ -30,11 +30,11 @@ Before running the app you need to configure the next services that depends on:
 
 ## ▶️ Run
 
-### <a href="#"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/intellij/intellij-original.svg" width="20"/></a> Intellij
+### <a href="#"><img src="https://github.com/JetBrains/logos/raw/refs/heads/master/web/intellij-idea/intellij-idea.svg" width="20"/></a> Intellij
 
 Clone the repository using `git clone https://github.com/Justedlev/bridgewayhub.git` and after that run the app local,
-you can use the simple [run configuration](..%2F.run%2FDefault.run.xml), that based on [.env](../.env)
-and [jvm options](../.vmoptions), make sure that the service registry (eureka service) already started.
+you can use the simple [run configuration](.run/Default.run.xml), that based on [.env](.env)
+and [jvm options](.vmoptions), make sure that the service registry (eureka service) already started.
 
 > [!NOTE]
 > The Service Registry (Discovery Service) can be disabled by using the properties if needed
@@ -49,19 +49,20 @@ and [jvm options](../.vmoptions), make sure that the service registry (eureka se
 > ```
 
 > [!TIP]
-> You can also disable it in [.vmoptions](..%2F.vmoptions), just adding the envs
+> You can also disable it in [.vmoptions](.vmoptions), just adding the envs
 > ```
 > -Dspring.cloud.discovery.enabled=false
 > -Deureka.client.enabled=false
 > ```
 
-### <a href="#"><img src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/refs/heads/master/src/images/icons/Devops/docker.svg" width="20"/></a> Docker
+### 🐳 Docker
 
 I have a repository on [Docker Hub](https://hub.docker.com/repository/docker/justedlev/bridgewayhub/general)
 
 #### 📝 Docker compose
 
-Simple command to run the container: 
+Simple command to run the container:
+
 ```shell
 docker compose up -d --build
 ```
@@ -77,7 +78,7 @@ services:
     container_name: bridgewayhub
     image: justedlev/bridgewayhub:latest
     build:
-      context: .
+      context: docs
     env_file:
       - .env
     ports:
