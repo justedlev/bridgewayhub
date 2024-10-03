@@ -7,3 +7,4 @@ logging:
     console: INFO
   level:
     root: debug
+    web: debug
