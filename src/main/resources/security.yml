@@ -21,7 +21,7 @@ spring:
             client-id: ${KC_CLIENT_ID}
             client-secret: ${KC_CLIENT_SECRET}
             authorization-grant-type: authorization_code
-            redirect-uri: http://localhost:${server.port}/login/oauth2/code/{registrationId}
+            redirect-uri: http://localhost:${server.port}/oauth2/authorization/{registrationId}
             scope:
               - openid
               - profile
@@ -53,3 +53,4 @@ security:
     POST:
       - /sso/logout
       - /logout
+      - /sso/oauth2/token
