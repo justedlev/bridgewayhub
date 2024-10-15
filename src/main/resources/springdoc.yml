@@ -4,12 +4,7 @@ springdoc:
     enabled: true
   swagger-ui:
     enabled: true
-    oauth:
-      client-id: ${keycloak.client.id}
-      client-secret: ${keycloak.client.secret}
-      realm: ${keycloak.realm}
     urls:
-      - url: /service-1/api/v3/api-docs
-        name: 'Service N1 APIs'
-      - url: /service-2/api/v3/api-docs
-        name: 'Service N2 APIs'
+      - url: /kloudy/api/v3/api-docs
+        name: 'Kloudy APIs'
+        display-name: 'Kloudy APIs v1'
