@@ -8,6 +8,9 @@ spring:
       - classpath:/eureka.yml
       - classpath:/logging.yml
       - classpath:/security.yml
+  webflux:
+    problemdetails:
+      enabled: true
   application:
     name: '@project.name@'
   devtools:
@@ -27,8 +30,8 @@ spring:
         corsConfigurations:
           '[/**]':
             allow-credentials: true
-            allowed-origins:
-              - http://localhost:*
+            allowed-origin-patterns:
+              - 'http://localhost:8765'
             allowed-headers: '*'
             allowed-methods:
               - GET
@@ -44,11 +47,15 @@ spring:
       loadbalancer:
         use404: true
       routes:
-        - id: microservice/1
-          uri: lb://microservice/1
+        - id: keycloak
+          uri: ${KC_HOST}
           predicates:
-            - Path=/api/v1/**
-        - id: microservice/2
-          uri: lb://microservice/2
+            - Path=/sso/**
+            - Method=POST,GET
+          filters:
+            - RewritePath=/sso/userinfo,/realms/${KC_REALM}/protocol/openid-connect/userinfo
+            - RewritePath=/sso/oauth2/token,/realms/${KC_REALM}/protocol/openid-connect/token
+        - id: kloudy
+          uri: lb://kloudy
           predicates:
             - Path=/api/v1/**
