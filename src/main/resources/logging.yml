@@ -3,8 +3,7 @@ logging:
     path: ./logs
     name: ${logging.file.path}/latest.log
   threshold:
-    file: INFO
-    console: INFO
+    file: info
   level:
-    root: debug
+    root: info
     web: debug
