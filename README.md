@@ -16,9 +16,17 @@
 
 ## 📋 About
 
-__BridgeWay Hub__ example implementation of `API Gateway` based on `Spring Boot 3`, `Keycloak` as a security layer 
-and `Eureka Client` as service registry, in microservice architecture, detailed configuration will depend directly on 
-additional business requirements and is applied in the application properties. [For more details](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/)
+__BridgeWay Hub__ example implementation of `API Gateway` based on `Spring Boot 3`, `Keycloak` as a security layer
+and `Eureka Client` as service registry, in microservice architecture, detailed configuration will depend directly on
+additional business requirements and is applied in the application
+properties. [For more details](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/)
+
+## 🧾 References
+
+- [Externalized Configuration](https://docs.spring.io/spring-boot/reference/features/external-config.html#features.external-config.typesafe-configuration-properties.relaxed-binding.environment-variables)
+- [Docker CLI](https://docs.docker.com/reference/cli/docker/compose/)
+- [Keycloak on Docker](https://www.keycloak.org/getting-started/getting-started-docker)
+- [Postgres on Docker](https://hub.docker.com/_/postgres)
 
 ## ⚠️ Requirements
 
@@ -32,12 +40,43 @@ Before running the app you need to configure the next services that depends on:
 
 ### <a href="#"><img src="https://github.com/JetBrains/logos/raw/refs/heads/master/web/intellij-idea/intellij-idea.svg" width="20"/></a> Intellij
 
-Clone the repository using `git clone https://github.com/Justedlev/bridgewayhub.git` and after that run the app local,
-you can use the simple [run configuration](.run/Default.run.xml), that based on [.env](.env)
-and [jvm options](.vmoptions), make sure that the service registry (eureka service) already started.
+To run the app you can use simple run configuration (Intellij IDEA), that based on [.env](.env)
+and [jvm options](.vmoptions)
+
+```xml
+
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="Default" type="SpringBootApplicationConfigurationType"
+                   factoryName="Spring Boot">
+        <option name="envFilePaths">
+            <option value="$PROJECT_DIR$/.env"/>
+        </option>
+        <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources"/>
+        <module name="bridgewayhub"/>
+        <selectedOptions>
+            <option name="environmentVariables"/>
+        </selectedOptions>
+        <option name="SPRING_BOOT_MAIN_CLASS" value="io.justedlev.msrv.bridgeway.BridgeWayHubApplication"/>
+        <option name="VM_PARAMETERS" value="@.vmoptions"/>
+        <method v="2">
+            <option name="Make" enabled="true"/>
+        </method>
+    </configuration>
+</component>
+```
+
+> [!WARNING]
+>
+> Make sure that the next services already started
+> 
+> - Service Registry (eureka server)
+> - Keycloak server
+> - Postgres DB
 
 > [!NOTE]
+>
 > The Service Registry (Discovery Service) can be disabled by using the properties if needed
+> 
 > ```yml 
 > spring:
 >   cloud:
@@ -49,15 +88,34 @@ and [jvm options](.vmoptions), make sure that the service registry (eureka servi
 > ```
 
 > [!TIP]
+>
 > You can also disable it in [.vmoptions](.vmoptions), just adding the envs
+> 
 > ```
 > -Dspring.cloud.discovery.enabled=false
 > -Deureka.client.enabled=false
 > ```
+> 
+> OR
+>
+> You can add the env props to the [.env](.env)
+> 
+> ```
+> SPRING_CLOUD_DISCOVERY_ENABLED=false
+> EUREKA_CLIENT_ENABLED=false
+> ```
 
 ### 🐳 Docker
 
-I have a repository on [Docker Hub](https://hub.docker.com/repository/docker/justedlev/bridgewayhub/general)
+First build your amazing 😁 `docker compose` file and then run using the below cmd
+
+```shell
+docker compose build -d
+```
+
+> [!TIP]
+> 
+> I already prepared some image on [🐳 docker hub](https://hub.docker.com/repository/docker/justedlev/bridgewayhub)
 
 #### 📝 Docker compose
 
@@ -67,14 +125,12 @@ Simple command to run the container:
 docker compose up -d --build
 ```
 
-Learn More with Docker CLI: [Compose](https://docs.docker.com/reference/cli/docker/compose/)
-
-The full compose.yaml that I personally use
+The full [compose.yaml](compose.yaml) that I personally use
 
 ```yml
 name: justedlev-msrv
 services:
-  bridgewayhub:
+  api-gateway:
     container_name: bridgewayhub
     image: justedlev/bridgewayhub:latest
     build:
@@ -89,7 +145,7 @@ services:
 
   # Service discovery
   service-registry:
-    container_name: service-registry
+    container_name: eureka-server
     image: justedlev/simple-eureka-server:latest
     environment:
       SERVER_PORT: 8761
