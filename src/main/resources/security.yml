@@ -51,4 +51,4 @@ security:
     POST:
       - /sso/logout
       - /logout
-      - /sso/oauth2/token
+      - /sso/**
