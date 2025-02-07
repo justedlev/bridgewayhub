@@ -53,9 +53,4 @@ spring:
             - Path=/sso/**
             - Method=POST,GET
           filters:
-            - RewritePath=/sso/userinfo,/realms/${KC_REALM}/protocol/openid-connect/userinfo
-            - RewritePath=/sso/oauth2/token,/realms/${KC_REALM}/protocol/openid-connect/token
-        - id: kloudy
-          uri: lb://kloudy
-          predicates:
-            - Path=/api/v1/**
+            - RewritePath=/sso/(?<segment>.*),/realms/${KC_REALM}/$\{segment}
