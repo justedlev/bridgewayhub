@@ -48,6 +48,7 @@ security:
       - /actuator/**
       - /*/actuator/**
       - /error
+      - /sso/.well-known/**
     POST:
       - /sso/logout
       - /logout
