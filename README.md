@@ -130,30 +130,70 @@ The full [compose.yaml](compose.yaml) that I personally use
 ```yml
 name: justedlev-msrv
 services:
-  api-gateway:
+  # API Gateway
+  api-gateway.justedlev:
+    tty: true
+    env_file:
+      - .env
     container_name: bridgewayhub
     image: justedlev/bridgewayhub:latest
     build:
-      context: docs
-    env_file:
-      - .env
+      context: .
     ports:
-      - "8765:${SERVER_PORT}"
+      - "${SERVER_PORT}:${SERVER_PORT}"
+    healthcheck:
+      test: [ "CMD", "curl", "-k", "-f", "http://localhost:${SERVER_PORT}/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
     depends_on:
-      - sso
-      - service-registry
+      auth-server.justedlev:
+        condition: service_started
+      service-discovery.justedlev:
+        condition: service_healthy
+      config-server.justedlev:
+        condition: service_healthy
+    volumes:
+      - ./logs:${LOGGING_FILE_PATH}
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 1GB
 
   # Service discovery
-  service-registry:
-    container_name: eureka-server
-    image: justedlev/simple-eureka-server:latest
+  service-discovery.justedlev:
+    tty: true
     environment:
-      SERVER_PORT: 8761
-      EUREKA_INSTANCE_HOSTNAME: service-registry
-      SPRING_SECURITY_USER_NAME: example
-      SPRING_SECURITY_USER_PASSWORD: example
+      - SERVER_PORT=${SERVER_PORT}
+      - SPRING_APPLICATION_NAME=service-discovery
+      - SPRING_SECURITY_USER_NAME={example}
+      - SPRING_SECURITY_USER_PASSWORD={example}
+      - SPRING_SECURITY_USER_ROLES={example}
+      - EUREKA_INSTANCE_HOSTNAME=service-discovery
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://{example}:{example}@service-discovery.justedlev.com:${SERVER_PORT}/eureka/
+      - LOGGING_FILE_PATH=/var/log
+    container_name: ${SRVREG_APP_NAME}
+    image: justedlev/simple-eureka-server:latest
     ports:
-      - "8761:${SERVER_PORT}"
+      - "${SERVER_PORT}:${SERVER_PORT}"
+    healthcheck:
+      test: [ "CMD", "curl", "-k", "-f", "http://localhost:${SERVER_PORT}/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    depends_on:
+      config-server.justedlev:
+        condition: service_healthy
+    volumes:
+      - ./logs/service-discovery:/var/log
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 1GB
 
   # SSO service (keycloak)
   sso:

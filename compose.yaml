@@ -1,29 +1,69 @@
 name: justedlev-msrv
 services:
-  bridgewayhub:
+  # API Gateway
+  api-gateway.justedlev:
+    tty: true
+    env_file:
+      - .env
     container_name: bridgewayhub
     image: justedlev/bridgewayhub:latest
     build:
       context: .
-    env_file:
-      - .env
     ports:
-      - "8765:${SERVER_PORT}"
+      - "${SERVER_PORT}:${SERVER_PORT}"
+    healthcheck:
+      test: [ "CMD", "curl", "-k", "-f", "http://localhost:${SERVER_PORT}/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
     depends_on:
-      - sso
-      - service-registry
+      auth-server.justedlev:
+        condition: service_started
+      service-discovery.justedlev:
+        condition: service_healthy
+      config-server.justedlev:
+        condition: service_healthy
+    volumes:
+      - ./logs:${LOGGING_FILE_PATH}
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 1GB
 
   # Service discovery
-  service-registry:
-    container_name: service-registry
-    image: justedlev/simple-eureka-server:latest
+  service-discovery.justedlev:
+    tty: true
     environment:
-      SERVER_PORT: 8761
-      EUREKA_INSTANCE_HOSTNAME: service-registry
-      SPRING_SECURITY_USER_NAME: "{example}"
-      SPRING_SECURITY_USER_PASSWORD: "{example}"
+      - SERVER_PORT=${SRVREG_PORT}
+      - SPRING_APPLICATION_NAME=${SRVREG_APP_NAME}
+      - SPRING_SECURITY_USER_NAME=${SRVREG_USER_NAME}
+      - SPRING_SECURITY_USER_PASSWORD=${SRVREG_USER_PWD}
+      - SPRING_SECURITY_USER_ROLES=system
+      - EUREKA_INSTANCE_HOSTNAME=${SRVREG_APP_NAME}
+      - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=${SRVREG_DEFAULTZONE}
+      - LOGGING_FILE_PATH=${SRVREG_LOGGING_FILE_PATH}
+    container_name: ${SRVREG_APP_NAME}
+    image: justedlev/simple-eureka-server:latest
     ports:
-      - "8761:${SERVER_PORT}"
+      - "${SRVREG_PORT}:${SRVREG_PORT}"
+    healthcheck:
+      test: [ "CMD", "curl", "-k", "-f", "http://localhost:${SRVREG_PORT}/actuator/health" ]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 10s
+    depends_on:
+      config-server.justedlev:
+        condition: service_healthy
+    volumes:
+      - ./logs/${SRVREG_APP_NAME}:${SRVREG_LOGGING_FILE_PATH}
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 1GB
 
   # SSO service (keycloak)
   sso:
