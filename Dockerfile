@@ -11,6 +11,10 @@
 # Create a stage for resolving and downloading dependencies.
 FROM eclipse-temurin:17-jdk-jammy AS deps
 
+LABEL maintainer="Justedlev"
+LABEL name="bridgewayhub"
+LABEL description="API Gateway"
+
 WORKDIR /build
 
 # Copy the mvnw wrapper with executable permissions.
