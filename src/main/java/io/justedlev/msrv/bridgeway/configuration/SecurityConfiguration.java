@@ -17,8 +17,6 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @EnableWebFluxSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
-    private final SecurityProperties properties;
-
     @Bean
     public SecurityWebFilterChain securityFilterChain(@NonNull ServerHttpSecurity httpSecurity,
                                                       ReactiveClientRegistrationRepository rcrr) {
@@ -29,10 +27,24 @@ public class SecurityConfiguration {
                 .logout(spec -> spec
                         .logoutSuccessHandler(new OidcClientInitiatedServerLogoutSuccessHandler(rcrr))
                 )
-                .authorizeExchange(spec -> {
-                    properties.getWhitelist().forEach((k, v) -> spec.pathMatchers(k, v).permitAll());
-                    spec.anyExchange().authenticated();
-                })
+                .authorizeExchange(spec -> spec
+                        .pathMatchers(
+                                "/webjars/**",
+                                "/v3/api-docs/**",
+                                "/*/v3/api-docs/**",
+                                "/*/*/v3/api-docs/**",
+                                "/swagger-ui.html",
+                                "/swagger-ui/**",
+                                "/swagger-resources",
+                                "/swagger-resources/**",
+                                "/actuator/**",
+                                "/*/actuator/**",
+                                "/error",
+                                "/oauth2/**",
+                                "/logout"
+                        ).permitAll()
+                        .anyExchange().authenticated()
+                )
                 .build();
     }
 }
