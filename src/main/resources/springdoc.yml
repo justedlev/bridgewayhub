@@ -1,6 +1,0 @@
-springdoc:
-  show-actuator: true
-  api-docs:
-    enabled: true
-  swagger-ui:
-    enabled: true
