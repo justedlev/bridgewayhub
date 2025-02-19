@@ -1,5 +1,0 @@
-server:
-  port: ${SERVER_PORT:8765}
-  error:
-    include-stacktrace: never
-    include-message: always
