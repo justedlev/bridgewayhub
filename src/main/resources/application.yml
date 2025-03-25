@@ -84,6 +84,11 @@ spring:
             - Method=POST,GET
           filters:
             - RewritePath=/oauth2/(?<segment>.*),/realms/${KC_REALM}/$\{segment}
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbit
+    password: rabbit
 eureka:
   instance:
     instance-id: ${spring.application.name}
