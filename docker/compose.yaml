@@ -1,0 +1,20 @@
+name: justedlev-msrv
+services:
+  api-gateway.justedlev.io:
+    tty: true
+    env_file:
+      - .env
+    container_name: bridgewayhub
+    image: justedlev/bridgewayhub:latest
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8101:${SERVER_PORT}"
+    volumes:
+      - ./logs:${LOGGING_FILE_PATH}
+    deploy:
+      resources:
+        limits:
+          cpus: "0.75"
+          memory: 512MB

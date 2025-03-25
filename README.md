@@ -44,7 +44,6 @@ To run the app you can use simple run configuration (Intellij IDEA), that based 
 and [jvm options](.vmoptions)
 
 ```xml
-
 <component name="ProjectRunConfigurationManager">
     <configuration default="false" name="Default" type="SpringBootApplicationConfigurationType"
                    factoryName="Spring Boot">
@@ -125,7 +124,7 @@ Simple command to run the container:
 docker compose up -d --build
 ```
 
-The full [compose.yaml](compose.yaml) that I personally use
+The full [compose.yaml](docker/compose.yaml) that I personally use
 
 ```yml
 name: justedlev-msrv
