@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Build the Docker image
-        run: docker buildx build . --no-cache --force-rm
+        run: docker buildx build . -f docker/Dockerfile --no-cache --force-rm
 
   push_to_registry:
     name: Push Docker image to Docker Hub
