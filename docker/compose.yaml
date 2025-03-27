@@ -10,7 +10,8 @@ services:
       context: ../
       dockerfile: docker/Dockerfile
     ports:
-      - "${SERVER_PORT}:${SERVER_PORT}"
+      - "8765:5000"
+      - "8766:5005"
     volumes:
       - ../logs:${LOGGING_FILE_PATH}
     deploy:
