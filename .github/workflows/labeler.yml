@@ -1,12 +1,8 @@
-name: Pull Request Labeler
+name: "Pull Request Labeler"
 on:
   - pull_request_target
-
-permissions:
-  contents: read
-
 jobs:
-  triage:
+  label:
     permissions:
       contents: read
       pull-requests: write
@@ -14,5 +10,5 @@ jobs:
     steps:
       - uses: actions/labeler@v5
         with:
-          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: "${{ secrets.GITHUB_TOKEN }}"
           sync-labels: true

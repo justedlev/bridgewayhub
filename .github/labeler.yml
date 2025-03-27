@@ -1,0 +1,29 @@
+java:
+  - '**/*.java'
+
+spring-boot:
+  - '**/application.yml'
+  - '**/application.properties'
+  - '**/src/main/java/**/config/**'
+  - '**/src/main/java/**/controller/**'
+  - '**/src/main/resources/**'
+
+docker:
+  - 'Dockerfile'
+  - '**/Dockerfile'
+  - 'docker-compose.yml'
+  - '**/docker-compose.yml'
+  - '**/docker/**'
+
+tests:
+  - '**/src/test/**'
+  - '**/*Test.java'
+  - '**/*Tests.java'
+
+docs:
+  - '**/*.md'
+  - '**/README.md'
+  - '**/docs/**'
+
+ci/cd:
+  - '.github/workflows/**'
