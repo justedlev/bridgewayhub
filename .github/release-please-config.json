@@ -9,22 +9,16 @@
       "include-v-in-tag": true,
       "separate-pull-requests": false,
       "draft-pull-request": false,
-      "draft": false,
       "skip-snapshot": true,
       "changelog-path": "CHANGELOG.md",
       "pull-request-title-pattern": "🚀 Release v${version}",
       "pull-request-header": "## 📦 What's Changed",
       "pull-request-footer": "Thanks to all contributors! 🙌",
-      "exclude-paths": [
-        ".git",
-        ".idea",
-        ".github"
-      ],
       "extra-files": [
         {
           "path": "pom.xml",
           "type": "xml",
-          "xpath": "project.version"
+          "xpath": "project/version"
         }
       ],
       "changelog-sections": [
