@@ -1,10 +1,12 @@
-## ✨ What’s Changed
+# 🚀 Pull Request
 
-<!-- Describe your changes in detail -->
+## 📋 Summary
+<!-- Describe the big picture of your changes -->
+
+## 🔍 Changes
+<!-- Manual testing, unit tests, CI output, etc. -->
 
 ## :package: Type of Change
-
-Please check the relevant option(s):
 
 - [ ] :bug: Bug fix — Fixes an issue or defect
 - [ ] :sparkles: New feature — Adds new functionality
@@ -16,26 +18,18 @@ Please check the relevant option(s):
 - [ ] :wrench: Configuration or build system
 - [ ] :construction: Other (please describe below)
 
-## :link: Related Issue(s) or Pull Request(s)
+## :link: Related Issues
 
-<!-- Link related issues, PRs, or external resources -->
+Closes #...
 
-## :test_tube: How to Test
+Fixes #...
 
+## 🧪 Testing
 <!-- Describe how reviewers can test your changes locally -->
-
-## :camera: Screenshots (if applicable)
-
-<!-- Add screenshots to help explain the changes -->
-
-## :memo: Notes for Reviewers
-
-<!-- Any important context or points to be aware of during review -->
 
 ## :white_check_mark: Checklist
 
-- [ ] All tests pass locally (`./mvnw test`)
-- [ ] Code is formatted and linted
-- [ ] No breaking changes introduced
-- [ ] Configuration changes are documented
-- [ ] Added/updated relevant documentation
+- [ ] Code builds correctly ✅
+- [ ] Tests have been added or updated 🧪
+- [ ] Docs were updated if necessary 📝
+- [ ] Follows style guidelines 🎨
