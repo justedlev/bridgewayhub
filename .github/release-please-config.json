@@ -18,7 +18,7 @@
         {
           "path": "pom.xml",
           "type": "xml",
-          "xpath": "//*[local-name()='project']/*[local-name()='version']"
+          "xpath": "//project/version"
         }
       ],
       "changelog-sections": [
