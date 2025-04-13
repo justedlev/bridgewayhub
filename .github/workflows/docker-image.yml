@@ -2,7 +2,7 @@ name: 🐳 Publish Docker image
 
 on:
   release:
-    types: [ published ]
+    types: [ created ]
     tags: [ "v*.*.*" ]
   workflow_dispatch:
 
