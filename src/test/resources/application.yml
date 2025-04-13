@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: test
+  cloud:
+    config:
+      enabled: false
+springdoc:
+  swagger-ui:
+    enabled: false
