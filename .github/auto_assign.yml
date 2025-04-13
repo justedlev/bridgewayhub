@@ -6,7 +6,7 @@ reviewers:
 addAssignees: true
 numberOfAssignees: 1
 assignees:
-  - justedlev
+  - author
 
 skipKeywords:
   - wip
