@@ -10,6 +10,8 @@
       "separate-pull-requests": false,
       "draft-pull-request": false,
       "skip-snapshot": true,
+      "branch-name": "release/v${version}",
+      "extra-label": "type: release",
       "changelog-path": "CHANGELOG.md",
       "pull-request-title-pattern": "🚀 Release v${version}",
       "pull-request-header": "## 📦 What's Changed",
