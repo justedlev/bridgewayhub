@@ -7,6 +7,9 @@ updates:
       - "justedlev"
     assignees:
       - "justedlev"
+    labels:
+      - "status: review"
+      - "lang: java"
     schedule:
       interval: "weekly"
 
@@ -17,6 +20,9 @@ updates:
       - "justedlev"
     assignees:
       - "justedlev"
+    labels:
+      - "status: review"
+      - "area: ci/cd"
     schedule:
       interval: "weekly"
 
@@ -27,5 +33,8 @@ updates:
       - "justedlev"
     assignees:
       - "justedlev"
+    labels:
+      - "status: review"
+      - "area: docker"
     schedule:
       interval: "weekly"
