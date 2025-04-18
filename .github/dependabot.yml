@@ -2,7 +2,7 @@ version: 2
 updates:
   - package-ecosystem: "maven"
     directory: "/"
-    target-branch: "dev"
+    target-branch: "develop"
     reviewers:
       - "justedlev"
     assignees:
@@ -12,7 +12,7 @@ updates:
 
   - package-ecosystem: "github-actions"
     directory: "/"
-    target-branch: "dev"
+    target-branch: "develop"
     reviewers:
       - "justedlev"
     assignees:
@@ -22,7 +22,7 @@ updates:
 
   - package-ecosystem: "docker"
     directory: "docker"
-    target-branch: "dev"
+    target-branch: "develop"
     reviewers:
       - "justedlev"
     assignees:
