@@ -4,6 +4,14 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [0.7.3](https://github.com/justedlev/bridgewayhub/compare/v0.7.2...v0.7.3) (2025-05-16)
+
+
+### 🐛 Bug Fixes
+
+* normalize line endings using `.gitattributes` ([3aec177](https://github.com/justedlev/bridgewayhub/commit/3aec177680dc6c2953aa3c0239c1d5e4e0e6c857))
+* normalize line endings using `.gitattributes` ([63072d1](https://github.com/justedlev/bridgewayhub/commit/63072d150eab58096aec2a0ec99b9a0cb328bfda)), closes [#69](https://github.com/justedlev/bridgewayhub/issues/69)
+
 ## [0.7.2](https://github.com/justedlev/bridgewayhub/compare/v0.7.1...v0.7.2) (2025-04-13)
 
 
