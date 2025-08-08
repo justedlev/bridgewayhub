@@ -99,6 +99,11 @@ eureka:
     app-group-name: justedlev-msrv
     appname: ${spring.application.name}
     hostname: localhost
+    prefer-ip-address: true
+    metadata-map:
+      prometheus:
+        scrape: true
+        path: /actuator/prometheus
   client:
     service-url:
       defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
