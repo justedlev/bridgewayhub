@@ -4,6 +4,22 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [0.8.0](https://github.com/justedlev/bridgewayhub/compare/v0.7.3...v0.8.0) (2025-08-08)
+
+
+### 🚀 Features
+
+* add prometheus configuration props ([2ce9274](https://github.com/justedlev/bridgewayhub/commit/2ce92747da3d4578c669127ed830e790c061bfec))
+* **management:** expose separate management server port ([dbbb9cc](https://github.com/justedlev/bridgewayhub/commit/dbbb9ccc56a0f93cac29d7f76b51e2b19f959528))
+* **security:** update `SecurityConfiguration` ([9438850](https://github.com/justedlev/bridgewayhub/commit/9438850590c5876a26b5e71364eef3c0adeeb7b6))
+* use `client_credentials` client reg grant type ([d82ba6d](https://github.com/justedlev/bridgewayhub/commit/d82ba6d175d64735aa2f84c828c5fd3d69b42275))
+
+
+### ♻️ Refactoring
+
+* fix deprecated properties ([212a3ac](https://github.com/justedlev/bridgewayhub/commit/212a3acd8442e7674ae6b9b9eadc3771f38b97e8))
+* remove basic from default eureka config props ([eaebfb9](https://github.com/justedlev/bridgewayhub/commit/eaebfb9894145f4885b611ddbc435605b573f91e))
+
 ## [0.7.3](https://github.com/justedlev/bridgewayhub/compare/v0.7.2...v0.7.3) (2025-05-16)
 
 
