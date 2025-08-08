@@ -10,7 +10,7 @@
     <groupId>io.github.justedlev.msrv</groupId>
     <artifactId>bridgewayhub</artifactId>
     <version>0.7.1</version>
-    <name>bridgewayhub</name>
+    <name>BridgewayHub</name>
     <description>API Gateway</description>
     <url>https://github.com/justedlev/${project.artifactId}</url>
     <licenses>
