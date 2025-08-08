@@ -108,6 +108,8 @@ eureka:
     service-url:
       defaultZone: http://eureka:eureka${eureka.instance.hostname}:8761/eureka/
 management:
+  server:
+    port: 7765
   info:
     build:
       enabled: true
