@@ -106,7 +106,7 @@ eureka:
         path: /actuator/prometheus
   client:
     service-url:
-      defaultZone: http://${spring.security.user.name}:${spring.security.user.password}@${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://eureka:eureka${eureka.instance.hostname}:8761/eureka/
 management:
   info:
     build:
