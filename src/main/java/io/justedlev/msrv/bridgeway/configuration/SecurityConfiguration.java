@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.lang.NonNull;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.reactive.EnableWebFluxSecurity;
@@ -28,15 +29,17 @@ public class SecurityConfiguration {
                         .logoutSuccessHandler(new OidcClientInitiatedServerLogoutSuccessHandler(rcrr))
                 )
                 .authorizeExchange(spec -> spec
+                        .pathMatchers(HttpMethod.GET, "/actuator/prometheus").hasAuthority("SCOPE_prometheus.metrics:read")
                         .pathMatchers(
                                 "/webjars/**",
                                 "/v3/api-docs/**",
                                 "/*/v3/api-docs/**",
+                                "/*/api/v3/api-docs/**",
                                 "/swagger-ui.html",
                                 "/swagger-ui/**",
                                 "/swagger-resources",
                                 "/swagger-resources/**",
-                                "/actuator/health",
+                                "/actuator/**",
                                 "/error",
                                 "/oauth2/**",
                                 "/logout"
