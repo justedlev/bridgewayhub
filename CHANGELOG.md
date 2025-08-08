@@ -4,6 +4,31 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [0.7.3](https://github.com/justedlev/bridgewayhub/compare/v0.7.2...v0.7.3) (2025-05-16)
+
+
+### 🐛 Bug Fixes
+
+* normalize line endings using `.gitattributes` ([3aec177](https://github.com/justedlev/bridgewayhub/commit/3aec177680dc6c2953aa3c0239c1d5e4e0e6c857))
+* normalize line endings using `.gitattributes` ([63072d1](https://github.com/justedlev/bridgewayhub/commit/63072d150eab58096aec2a0ec99b9a0cb328bfda)), closes [#69](https://github.com/justedlev/bridgewayhub/issues/69)
+
+## [0.7.2](https://github.com/justedlev/bridgewayhub/compare/v0.7.1...v0.7.2) (2025-04-13)
+
+
+### 🐛 Bug Fixes
+
+* **gha:** correct configuration for `kentaro-m/auto-assign-action` ([982c088](https://github.com/justedlev/bridgewayhub/commit/982c0888011663352dfeb1bc24fa7ebc6914ffe0))
+
+
+### ♻️ Refactoring
+
+* rename `BridgeWayHubApplicationTests.java` ([51358a3](https://github.com/justedlev/bridgewayhub/commit/51358a3e0aa44f3cace090cc0a05ec68b67056c7))
+
+
+### 🧪 Tests
+
+* add `application.yml` ([7636437](https://github.com/justedlev/bridgewayhub/commit/7636437690f54b4e3896b0beae4ee741900f9d72))
+
 ## [0.7.1](https://github.com/justedlev/bridgewayhub/compare/v0.7.0...v0.7.1) (2025-04-13)
 
 
