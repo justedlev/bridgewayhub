@@ -11,7 +11,7 @@ spring:
     problemdetails:
       enabled: true
   application:
-    name: '@project.name@'
+    name: bridgewayhub
   devtools:
     add-properties: false
     restart:
