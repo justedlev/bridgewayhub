@@ -9,7 +9,7 @@
     </parent>
     <groupId>io.github.justedlev.msrv</groupId>
     <artifactId>bridgewayhub</artifactId>
-    <version>0.8.0</version>
+    <version>0.9.0</version>
     <name>BridgeWay Hub</name>
     <description>API Gateway</description>
     <url>https://github.com/justedlev/${project.artifactId}</url>
