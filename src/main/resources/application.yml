@@ -111,8 +111,6 @@ management:
 springdoc:
   show-actuator: true
 logging:
-  threshold:
-    console: info
   level:
     root: info
     web: debug
