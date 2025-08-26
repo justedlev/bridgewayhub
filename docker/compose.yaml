@@ -12,8 +12,6 @@ services:
     ports:
       - "8765:5000"
       - "8766:5005"
-    volumes:
-      - ../logs:${LOGGING_FILE_PATH}
     deploy:
       resources:
         limits:
