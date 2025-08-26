@@ -19,10 +19,6 @@ spring:
     livereload:
       enabled: false
   security:
-    user:
-      name: bridgeway
-      password: bridgeway
-      roles: system
     oauth2:
       client:
         provider:
@@ -105,6 +101,9 @@ eureka:
         scrape: true
         path: /actuator/prometheus
   client:
+    webclient:
+      enabled: true
+    eureka-server-port: 8761
     service-url:
       defaultZone: http://eureka:eureka${eureka.instance.hostname}:8761/eureka/
 management:
