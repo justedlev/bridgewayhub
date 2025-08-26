@@ -75,11 +75,6 @@ spring:
               lower-case-service-id: true
           loadbalancer:
             use404: true
-  rabbitmq:
-    host: localhost
-    port: 5672
-    username: rabbit
-    password: rabbit
 eureka:
   instance:
     instance-id: ${spring.application.name}
