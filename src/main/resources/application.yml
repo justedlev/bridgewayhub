@@ -75,18 +75,6 @@ spring:
               lower-case-service-id: true
           loadbalancer:
             use404: true
-          routes:
-    #        - id: keycloak
-    #          uri: ${KC_HOST}
-    #          predicates:
-    #            - Path=/oauth2/**
-    #            - Method=POST,GET
-    #          filters:
-    #            - RewritePath=/oauth2/(?<segment>.*),/realms/${KC_REALM}/$\{segment}
-            - id: kloudy
-              uri: lb://kloudy
-              predicates:
-                - Path=/api/v1/**
   rabbitmq:
     host: localhost
     port: 5672
