@@ -54,6 +54,10 @@
           "type": "ci",
           "section": "🔧 CI/CD",
           "hidden": true
+        },
+        {
+          "type": "build",
+          "section": "⚙️ Build"
         }
       ]
     }
