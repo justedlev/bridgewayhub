@@ -18,6 +18,9 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 @EnableWebFluxSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
+    private static final String DEFAULT_AUTHORITY_PREFIX = "SCOPE_";
+    private final SecurityProperties properties;
+
     @Bean
     public SecurityWebFilterChain securityFilterChain(@NonNull ServerHttpSecurity httpSecurity,
                                                       ReactiveClientRegistrationRepository rcrr) {
@@ -28,24 +31,12 @@ public class SecurityConfiguration {
                 .logout(spec -> spec
                         .logoutSuccessHandler(new OidcClientInitiatedServerLogoutSuccessHandler(rcrr))
                 )
-                .authorizeExchange(spec -> spec
-                        .pathMatchers(HttpMethod.GET, "/actuator/prometheus").hasAuthority("SCOPE_prometheus.metrics:read")
-                        .pathMatchers(
-                                "/webjars/**",
-                                "/v3/api-docs/**",
-                                "/*/v3/api-docs/**",
-                                "/*/api/v3/api-docs/**",
-                                "/swagger-ui.html",
-                                "/swagger-ui/**",
-                                "/swagger-resources",
-                                "/swagger-resources/**",
-                                "/actuator/**",
-                                "/error",
-                                "/oauth2/**",
-                                "/logout"
-                        ).permitAll()
-                        .anyExchange().authenticated()
-                )
+                .authorizeExchange(spec -> {
+                    properties.getWhitelist().forEach((k, v) -> spec.pathMatchers(k, v).permitAll());
+                    spec.pathMatchers(HttpMethod.GET, "/actuator/prometheus")
+                            .hasAuthority(DEFAULT_AUTHORITY_PREFIX + "prometheus.metrics:ro");
+                    spec.anyExchange().authenticated();
+                })
                 .build();
     }
 }

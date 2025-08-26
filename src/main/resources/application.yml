@@ -134,3 +134,20 @@ logging:
   level:
     root: info
     web: debug
+bridgewayhub:
+  security:
+    whitelist:
+      GET:
+        - /webjars/**
+        - /v3/api-docs/**
+        - /swagger-ui.html
+        - /swagger-ui/**
+        - /swagger-resources
+        - /swagger-resources/**
+        - /configuration/ui
+        - /configuration/security
+        - /actuator/**
+        - /error
+      POST:
+        - /sso/logout
+        - /logout
