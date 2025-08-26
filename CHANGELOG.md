@@ -105,6 +105,77 @@ This project uses **[Conventional Commits](https://www.conventionalcommits.org/)
 * add `SECURITY.md` ([fc5efdd](https://github.com/justedlev/bridgewayhub/commit/fc5efddb30d4550343bc2087b458b2caf0807a57))
 * update `PULL_REQUEST_TEMPLATE.md` ([adf81f6](https://github.com/justedlev/bridgewayhub/commit/adf81f683afbb5267c0e57070095871ae132c182))
 
+## [0.7.0](https://github.com/justedlev/bridgewayhub/compare/v0.6.0...v0.7.0) (2025-03-25)
+
+### 🚀 Features
+
+* add `spring.rabbitmq.*` base configuration ([02787bb](https://github.com/justedlev/bridgewayhub/commit/02787bbf3ff020d154ffd2db7d16cfcd53afceca))
+* **docker:** add .env ([03005e7](https://github.com/justedlev/bridgewayhub/commit/03005e782b50837cb597409c8d680e028c04a4fd))
+* **docker:** add .vmoptions ([355c3fe](https://github.com/justedlev/bridgewayhub/commit/355c3feb4d238ff193591232c207073d2f560006))
+* **docker:** add compose.yaml ([58d09b4](https://github.com/justedlev/bridgewayhub/commit/58d09b4a4c51cc8034bace5efa70c803cac31aec))
+* **docker:** add Dockerfile ([3b2eda2](https://github.com/justedlev/bridgewayhub/commit/3b2eda2d0da678ba6ef4c7ea483fd40dd8b2bb7c))
+* **docker:** add entrypoint.sh ([ae6f829](https://github.com/justedlev/bridgewayhub/commit/ae6f829018bcf56e08e2e88197418efd1fc9d9ca))
+* **docker:** add healthcheck.sh ([6b2fc5c](https://github.com/justedlev/bridgewayhub/commit/6b2fc5ceb0f42459a7a7e7e506900e1b1a79cea8))
+
+
+## [0.6.0](https://github.com/justedlev/bridgewayhub/compare/v0.5.3...v0.6.0) (2025-02-18)
+
+### 🚀 Features
+
+* add config load from server ([307ddcc](https://github.com/justedlev/bridgewayhub/commit/307ddccd03cb8c41db4e079348556506f17c1f88))
+
+
+## [0.5.3](https://github.com/justedlev/bridgewayhub/compare/v0.4.4...v0.5.3) (2025-02-08)
+
+### 🐛 Bug Fixes
+
+* **config:** remove extra properties ([7388987](https://github.com/justedlev/bridgewayhub/commit/7388987c5ede72ebcedf01329bb7d95a896c094a))
+* update `banner.txt` ([b5deec4](https://github.com/justedlev/bridgewayhub/commit/b5deec4f86ad2128d51ca7a676849933bffa40d6))
+
+
+## [0.4.4](https://github.com/justedlev/bridgewayhub/compare/v0.4.1...v0.4.4) (2025-02-07)
+
+### 🚀 Features
+
+* **config:** add `LOGGING_FILE_PATH` env var ([63323d5](https://github.com/justedlev/bridgewayhub/commit/63323d591119c20ff8729b41a2e8467fcd11a804))
+* **config:** add `security.whitelist.GET` path pattern ([a462ec0](https://github.com/justedlev/bridgewayhub/commit/a462ec006dec124efea15f1970c906cf3a40b749))
+* **config:** remove extra env var ([e393514](https://github.com/justedlev/bridgewayhub/commit/e393514c7ce57f11a4f6e84c19c833e04fc6f184))
+* **config:** use `allowed-origins` instead of `allowed-origin-patterns` ([a902068](https://github.com/justedlev/bridgewayhub/commit/a902068ba75fed1412e65138919672aa1d14d1be))
+* **config:** use env var combined with default port ([72bf5c3](https://github.com/justedlev/bridgewayhub/commit/72bf5c36b2481d607a3f5dd408e75f38ea9bf464))
+* **gha:** add `target-branch: "dev"` ([b186c3f](https://github.com/justedlev/bridgewayhub/commit/b186c3f6cac141e341380a74deb3c64a09523722))
+
+### 🐛 Bug Fixes
+
+* **config:** change `redirect-uri` path ([4c5b3f7](https://github.com/justedlev/bridgewayhub/commit/4c5b3f714cee861e9fea40725229383782bab4d0))
+* **config:** remove logging `trace` level ([ac894d6](https://github.com/justedlev/bridgewayhub/commit/ac894d6d4a8ade9bef8b57af22fa3d6751bad76c))
+* **logging:** name from env ([f8c407d](https://github.com/justedlev/bridgewayhub/commit/f8c407dfc23adaaafaf51e9475e68b044156b518))
+
+
+## [0.3.0](https://github.com/justedlev/bridgewayhub/compare/v0.1.0...v0.3.0) (2024-10-03)
+
+### 🚀 Features
+
+* add logging level for web ([dd154a7](https://github.com/justedlev/bridgewayhub/commit/dd154a7d3827348f6ba42abe34ab2ba218e25f56))
+* integrate config server ([3651b25](https://github.com/justedlev/bridgewayhub/commit/3651b25bbddfd66483fa149b1a6a2707ff16b4ad))
+* update .env ([a8c4d0c](https://github.com/justedlev/bridgewayhub/commit/a8c4d0c02dcc1470452e5c16dd16d981f24936b0))
+* update default user creds ([b6a3794](https://github.com/justedlev/bridgewayhub/commit/b6a379457e17aaf9130a4720379e172e4e506a3e))
+* update gateway config ([030cfb9](https://github.com/justedlev/bridgewayhub/commit/030cfb999248a4eccbaf0f954dcec3263449f318))
+
+
+## [0.1.0](https://github.com/justedlev/bridgewayhub/compare/v0.0.1-SNAPSHOT...v0.1.0) (2024-09-28)
+
+### 🚀 Features
+
+* deprecate custom impl `ServerLogoutHandler` ([62fc439](https://github.com/justedlev/bridgewayhub/commit/62fc439e7c8fe517dcf84fef5784856e25ae49cc))
+* **security:** update logout handler ([d1642b2](https://github.com/justedlev/bridgewayhub/commit/d1642b2ec6b92acb0354628d3bd95b5447382a7a))
+
+
+## 0.0.1-SNAPSHOT (2024-09-19)
+
+### 🚀 Features
+
+* Init
+
 ## [Unreleased]
 
 _Changes that are in progress but not yet released._
