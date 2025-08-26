@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [0.9.1](https://github.com/justedlev/bridgewayhub/compare/v0.9.0...v0.9.1) (2025-08-26)
+
+
+### 📚 Documentation
+
+* enrich `CHANGELOG.md` ([cb6cabc](https://github.com/justedlev/bridgewayhub/commit/cb6cabc26ab02575f3f34de0672a28de0ee32cc4))
+
 ## [0.9.0](https://github.com/justedlev/bridgewayhub/compare/v0.8.0...v0.9.0) (2025-08-26)
 
 
