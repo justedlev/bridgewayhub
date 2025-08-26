@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [0.9.1](https://github.com/justedlev/bridgewayhub/compare/v0.9.0...v0.9.1) (2025-08-26)
+
+
+### 📚 Documentation
+
+* enrich `CHANGELOG.md` ([cb6cabc](https://github.com/justedlev/bridgewayhub/commit/cb6cabc26ab02575f3f34de0672a28de0ee32cc4))
+
+
+### ⚙️ Build
+
+* **docker:** fix healthcheck script ([54bc4e2](https://github.com/justedlev/bridgewayhub/commit/54bc4e29412021c0a5ec68a5669e2dab77a7c977))
+* **docker:** fix healthcheck script ([e0b30d9](https://github.com/justedlev/bridgewayhub/commit/e0b30d9e36f29edb0b6bc2e8b2c72a3b2b70a3bf))
+
 ## [0.9.0](https://github.com/justedlev/bridgewayhub/compare/v0.8.0...v0.9.0) (2025-08-26)
 
 
