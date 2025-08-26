@@ -4,6 +4,29 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [0.9.0](https://github.com/justedlev/bridgewayhub/compare/v0.8.0...v0.9.0) (2025-08-26)
+
+
+### 🚀 Features
+
+* add configurable endpoint whitelist ([1fd9d30](https://github.com/justedlev/bridgewayhub/commit/1fd9d306bf82019ba0f9d7223a20f28d36ffab90)), closes [#32](https://github.com/justedlev/bridgewayhub/issues/32)
+* **config:** add default scopes ([6dd6f12](https://github.com/justedlev/bridgewayhub/commit/6dd6f124a9244fa69de35dd2c0be009dd7da5a7d))
+* **security:** add oauth2 for `WebClient` ([73cc460](https://github.com/justedlev/bridgewayhub/commit/73cc460c9fbc4cef0bc5c80eb23073230a5c82a4)), closes [#80](https://github.com/justedlev/bridgewayhub/issues/80)
+
+
+### ♻️ Refactoring
+
+* **config:** remove `bootstrap.yml` ([ba5529d](https://github.com/justedlev/bridgewayhub/commit/ba5529d0729a70ea76bbde1e73e082d7b8bd57ca))
+* **config:** remove `logging.file` props ([3eeacd2](https://github.com/justedlev/bridgewayhub/commit/3eeacd2b284dd074d9ef2dcf615af9e8eab463ae))
+* **config:** remove `logging.threshold` props ([4000c3e](https://github.com/justedlev/bridgewayhub/commit/4000c3ed321be3381af0381bb1736cbeac1af89a))
+* **config:** remove extra gateway routes ([83946af](https://github.com/justedlev/bridgewayhub/commit/83946aff751040158b6b1c75ba39f163bd0c3a65))
+* **config:** remove rabbit config ([8e7ee92](https://github.com/justedlev/bridgewayhub/commit/8e7ee92cacba0acddda4473c3a39ff77832210d8))
+* **config:** use fixed eureka defaultZone url ([8ae8d9f](https://github.com/justedlev/bridgewayhub/commit/8ae8d9f5bb040fa3673703843c36499046e41da2))
+* **env:** nested variables must not appear outside double quotes ([ca18a2f](https://github.com/justedlev/bridgewayhub/commit/ca18a2f8ae90c4a27baaf9a3f1485e85b99c3283))
+* remove `SERVER_PORT` ([be2e99a](https://github.com/justedlev/bridgewayhub/commit/be2e99a52df5184d8fcbfdd491f09124898a2463))
+* remove `spring.security.user` props ([31003a1](https://github.com/justedlev/bridgewayhub/commit/31003a1af0b46b8c2e191eb390de633c257f703d))
+* use default app name ([99986da](https://github.com/justedlev/bridgewayhub/commit/99986da001e1cc28aea2820ddd0c50d8407943ab))
+
 ## [0.8.0](https://github.com/justedlev/bridgewayhub/compare/v0.7.3...v0.8.0) (2025-08-08)
 
 
