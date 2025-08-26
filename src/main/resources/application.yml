@@ -91,7 +91,7 @@ eureka:
       enabled: true
     eureka-server-port: 8761
     service-url:
-      defaultZone: http://eureka:eureka${eureka.instance.hostname}:8761/eureka/
+      defaultZone: http://${eureka.instance.hostname}:${eureka.client.eureka-server-port}/eureka/
 management:
   server:
     port: 7765
