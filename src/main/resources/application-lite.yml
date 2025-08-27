@@ -1,0 +1,11 @@
+spring:
+  autoconfigure:
+    exclude: org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+  cloud:
+    bus:
+      enabled: false
+    config:
+      enabled: false
+eureka:
+  client:
+    enabled: false
