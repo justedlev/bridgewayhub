@@ -4,6 +4,15 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [0.9.2](https://github.com/justedlev/bridgewayhub/compare/v0.9.1...v0.9.2) (2025-08-26)
+
+
+### ⚙️ Build
+
+* **docker-compose:** remove `volumes` ([b451166](https://github.com/justedlev/bridgewayhub/commit/b451166fbb22406e70f9ac5b7f0cc5a8cdd68517))
+* **docker:** fix healthcheck bad substitution error ([5fbac9e](https://github.com/justedlev/bridgewayhub/commit/5fbac9ea7741d732908ca1882a5ab4524085d5f4))
+* **docker:** update `.env` ([a627d72](https://github.com/justedlev/bridgewayhub/commit/a627d722e702ceee63e76a4bb5d902c04c1716ee))
+
 ## [0.9.1](https://github.com/justedlev/bridgewayhub/compare/v0.9.0...v0.9.1) (2025-08-26)
 
 
