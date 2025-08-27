@@ -44,7 +44,7 @@ LABEL maintainer="Justedlev"
 LABEL name="bridgewayhub"
 LABEL description="API Gateway"
 
-ENV SERVER_PORT=5000
+ENV SERVER_PORT=8765
 
 # Create a non-privileged user that the app will run under.
 # See https://docs.docker.com/go/dockerfile-user-best-practices/
