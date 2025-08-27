@@ -30,8 +30,10 @@ import java.util.Map;
 @Getter
 @Setter
 @Configuration
-@ConfigurationProperties("bridgewayhub.security")
+@ConfigurationProperties(SecurityProperties.PREFIX)
 public class SecurityProperties {
+    public static final String PREFIX = "bridgewayhub.security";
+
     /**
      * A map that holds the HTTP method as the key and an array of allowed endpoint patterns as the value.
      * <p>
