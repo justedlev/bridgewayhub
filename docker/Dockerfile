@@ -45,6 +45,7 @@ LABEL name="bridgewayhub"
 LABEL description="API Gateway"
 
 ENV SERVER_PORT=8765
+ENV MANAGEMENT_SERVER_PORT=7765
 
 # Create a non-privileged user that the app will run under.
 # See https://docs.docker.com/go/dockerfile-user-best-practices/
@@ -70,6 +71,7 @@ COPY --chmod=0755 /docker/entrypoint.sh /entrypoint
 COPY --chmod=0755 /docker/healthcheck.sh /healthcheck
 
 EXPOSE ${SERVER_PORT}
+EXPOSE ${MANAGEMENT_SERVER_PORT}
 
 # Define the entry point for the Spring Boot application
 ENTRYPOINT [ "sh", "/entrypoint" ]
