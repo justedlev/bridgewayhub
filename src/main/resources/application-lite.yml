@@ -1,6 +1,8 @@
 spring:
   autoconfigure:
-    exclude: org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+    exclude:
+      - org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+      - org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientAutoConfiguration
   cloud:
     bus:
       enabled: false
@@ -9,3 +11,9 @@ spring:
 eureka:
   client:
     enabled: false
+management:
+  server:
+    port: -1
+  endpoints:
+    access:
+      default: none
