@@ -1,0 +1,9 @@
+spring:
+  cloud:
+    config:
+      enabled: true
+    bus:
+      enabled: true
+  config:
+    import:
+      - 'optional:configserver:'

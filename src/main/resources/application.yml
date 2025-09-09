@@ -41,6 +41,8 @@ spring:
               lower-case-service-id: true
           loadbalancer:
             use404: true
+    config:
+      enabled: false
 eureka:
   instance:
     instance-id: ${spring.application.name}
