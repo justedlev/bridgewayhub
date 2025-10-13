@@ -1,0 +1,22 @@
+spring:
+  cloud:
+    discovery:
+      enabled: true
+eureka:
+  instance:
+    instance-id: ${spring.application.name}
+    app-group-name: justedlev-msrv
+    appname: ${spring.application.name}
+    hostname: localhost
+    prefer-ip-address: true
+    metadata-map:
+      prometheus:
+        scrape: true
+        path: /actuator/prometheus
+  client:
+    enabled: true
+    webclient:
+      enabled: true
+    eureka-server-port: 8761
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${eureka.client.eureka-server-port}/eureka/

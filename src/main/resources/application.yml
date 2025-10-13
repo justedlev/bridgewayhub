@@ -4,6 +4,11 @@ server:
     include-stacktrace: never
     include-message: always
 spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+      - org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientAutoConfiguration
+      - org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration
   webflux:
     problemdetails:
       enabled: true
@@ -43,25 +48,11 @@ spring:
             use404: true
     config:
       enabled: false
-eureka:
-  instance:
-    instance-id: ${spring.application.name}
-    app-group-name: justedlev-msrv
-    appname: ${spring.application.name}
-    hostname: localhost
-    prefer-ip-address: true
-    metadata-map:
-      prometheus:
-        scrape: true
-        path: /actuator/prometheus
-  client:
-    webclient:
-      enabled: true
-    eureka-server-port: 8761
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.client.eureka-server-port}/eureka/
+  rabbitmq:
+    enabled: false
 management:
   server:
     port: -1
-springdoc:
-  show-actuator: true
+  endpoints:
+    access:
+      default: none
