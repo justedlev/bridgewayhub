@@ -4,9 +4,11 @@ server:
     include-stacktrace: never
     include-message: always
 spring:
-  config:
-    import:
-      - 'optional:configserver:'
+  autoconfigure:
+    exclude:
+      - org.springframework.boot.autoconfigure.amqp.RabbitAutoConfiguration
+      - org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientAutoConfiguration
+      - org.springframework.boot.autoconfigure.security.oauth2.resource.servlet.OAuth2ResourceServerAutoConfiguration
   webflux:
     problemdetails:
       enabled: true
@@ -18,38 +20,7 @@ spring:
       enabled: false
     livereload:
       enabled: false
-  security:
-    oauth2:
-      client:
-        provider:
-          keycloak:
-            token-uri: ${KC_TOKEN_URI}
-            issuer-uri: ${KC_ISSUER_URI}
-            authorization-uri: ${KC_AUTH_URI}
-            jwk-set-uri: ${KC_JWKS_URI}
-            user-info-uri: ${KC_USER_INFO_URI}
-            user-name-attribute: preferred_username
-            user-info-authentication-method: header
-        registration:
-          bridgewayhub:
-            provider: keycloak
-            client-id: ${KC_CLIENT_ID}
-            client-secret: ${KC_CLIENT_SECRET}
-            authorization-grant-type: client_credentials
-            scope:
-              - discovery:rw
-              - config:ro
-      resourceserver:
-        jwt:
-          issuer-uri: ${KC_ISSUER_URI}
-          jwk-set-uri: ${KC_JWKS_URI}
-        opaquetoken:
-          introspection-uri: ${KC_INTROSPECTION_URI}
-          client-id: ${KC_CLIENT_ID}
-          client-secret: ${KC_CLIENT_SECRET}
   cloud:
-    config:
-      enabled: false
     gateway:
       server:
         webflux:
@@ -75,59 +46,13 @@ spring:
               lower-case-service-id: true
           loadbalancer:
             use404: true
-eureka:
-  instance:
-    instance-id: ${spring.application.name}
-    app-group-name: justedlev-msrv
-    appname: ${spring.application.name}
-    hostname: localhost
-    prefer-ip-address: true
-    metadata-map:
-      prometheus:
-        scrape: true
-        path: /actuator/prometheus
-  client:
-    webclient:
-      enabled: true
-    eureka-server-port: 8761
-    service-url:
-      defaultZone: http://${eureka.instance.hostname}:${eureka.client.eureka-server-port}/eureka/
+    config:
+      enabled: false
+  rabbitmq:
+    enabled: false
 management:
   server:
-    port: 7765
-  info:
-    build:
-      enabled: true
-    os:
-      enabled: true
-    defaults:
-      enabled: true
-    java:
-      enabled: true
+    port: -1
   endpoints:
-    web:
-      exposure:
-        include: '*'
-springdoc:
-  show-actuator: true
-logging:
-  level:
-    root: info
-    web: debug
-bridgewayhub:
-  security:
-    whitelist:
-      GET:
-        - /webjars/**
-        - /v3/api-docs/**
-        - /swagger-ui.html
-        - /swagger-ui/**
-        - /swagger-resources
-        - /swagger-resources/**
-        - /configuration/ui
-        - /configuration/security
-        - /actuator/**
-        - /error
-      POST:
-        - /sso/logout
-        - /logout
+    access:
+      default: none
