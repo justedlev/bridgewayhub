@@ -55,9 +55,6 @@ spring:
 management:
   server:
     port: -1
-  endpoints:
-    access:
-      default: none
 eureka:
   client:
     enabled: false
