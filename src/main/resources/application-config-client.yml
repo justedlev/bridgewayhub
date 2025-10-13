@@ -1,4 +1,6 @@
 spring:
+  rabbitmq:
+    enabled: true
   cloud:
     config:
       enabled: true

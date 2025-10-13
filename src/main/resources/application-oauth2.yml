@@ -27,7 +27,7 @@ spring:
           introspection-uri: ${KC_INTROSPECTION_URI}
           client-id: ${KC_CLIENT_ID}
           client-secret: ${KC_CLIENT_SECRET}
-bridgewayhub:
+bridgeway:
   security:
     whitelist:
       GET:

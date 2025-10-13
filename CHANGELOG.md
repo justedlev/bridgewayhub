@@ -4,6 +4,44 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [0.10.0](https://github.com/justedlev/bridgewayhub/compare/v0.9.2...v0.10.0) (2025-10-13)
+
+
+### ⚠ BREAKING CHANGES
+
+* **config:** improve profiles
+
+### 🚀 Features
+
+* **config:** add `BridgeWaySecurityConfigurationProperties.java` ([bfa2368](https://github.com/justedlev/bridgewayhub/commit/bfa23688ec05074a3010684eb4017a7902a51f17))
+* **config:** add `config-client` profile ([a281b27](https://github.com/justedlev/bridgewayhub/commit/a281b27a26f964bebfda6d8788ce077bcc3f3b21))
+* **config:** add `management` profile ([fb8e2fa](https://github.com/justedlev/bridgewayhub/commit/fb8e2fa5d8f5274f8e7def13205be34c83c5943a))
+* **config:** add `oauth2` profile ([74d0e4f](https://github.com/justedlev/bridgewayhub/commit/74d0e4f96b782e27195a140ce23227a4c894e531))
+* **config:** add lite config profile ([79ec04c](https://github.com/justedlev/bridgewayhub/commit/79ec04c92c5e705f18f6a701aed9acb3fe389a91))
+* **config:** improve oauth2 security configuration ([4a398dc](https://github.com/justedlev/bridgewayhub/commit/4a398dc5770f956025461eb72033c3713c41ad48))
+* **config:** update `lite` profile ([6cf210d](https://github.com/justedlev/bridgewayhub/commit/6cf210d1f3591c007beec535bcbc8f70495ba6a7))
+* **config:** update profiles ([ecfbf05](https://github.com/justedlev/bridgewayhub/commit/ecfbf056c3e80a836cf61268c22c92640dda0ea7)), closes [#94](https://github.com/justedlev/bridgewayhub/issues/94)
+* use customizable auto configuration ([39da981](https://github.com/justedlev/bridgewayhub/commit/39da98186d8b4346c822621fae5065ed27ef0d5c))
+
+
+### ♻️ Refactoring
+
+* **config:** remove `application-lite.yml` ([3ee0bc8](https://github.com/justedlev/bridgewayhub/commit/3ee0bc88329da6e7954d0dab2b1e175debe81c02))
+* **config:** remove extra env ([473573f](https://github.com/justedlev/bridgewayhub/commit/473573ff8173fdd2fb992deb6600d0120af7096d))
+* **config:** remove extra props ([794c50c](https://github.com/justedlev/bridgewayhub/commit/794c50c3a3f5b78d528dc7a22375e7f4b6e5d731))
+* extract `SecurityProperties.PREFIX` const ([a740744](https://github.com/justedlev/bridgewayhub/commit/a740744827398b73b83c43384702bc86c3255197))
+* update `.env` ([6d89d79](https://github.com/justedlev/bridgewayhub/commit/6d89d791176e8cfe3382b7855645b0be4dc21515))
+
+
+### ⚙️ Build
+
+* **deps:** bump actions/labeler from 5 to 6 ([d407ec2](https://github.com/justedlev/bridgewayhub/commit/d407ec2114b18646b3a9082a6877066e932f9b69))
+* **deps:** bump org.springdoc:springdoc-openapi-starter-webflux-ui ([85c9eea](https://github.com/justedlev/bridgewayhub/commit/85c9eeaf7ca53a27f4405275a9c2d9c2d048bede))
+* **docker:** expose separate management port ([ec12326](https://github.com/justedlev/bridgewayhub/commit/ec12326acb4c2c6af30b0dd2a94e4dd6163a2764))
+* **docker:** fix ports ([aa03a5e](https://github.com/justedlev/bridgewayhub/commit/aa03a5eda92d8e092ef7b318253445af4308fd32))
+* **docker:** remove debug mode ([58e2728](https://github.com/justedlev/bridgewayhub/commit/58e2728821e67ac07b7a29005b9a56afdacebb69))
+* **docker:** use default port ([8381352](https://github.com/justedlev/bridgewayhub/commit/8381352ea40a62d052921549def657f174d199a6))
+
 ## [0.9.2](https://github.com/justedlev/bridgewayhub/compare/v0.9.1...v0.9.2) (2025-08-26)
 
 

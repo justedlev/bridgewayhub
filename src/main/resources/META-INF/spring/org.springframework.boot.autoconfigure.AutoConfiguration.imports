@@ -1,0 +1,3 @@
+io.justedlev.msrv.bridgeway.autoconfiguration.BridgeWayOAuth2ClientAutoConfiguration
+io.justedlev.msrv.bridgeway.autoconfiguration.BridgeWayOAuth2ResourceServerAutoConfiguration
+io.justedlev.msrv.bridgeway.autoconfiguration.BridgeWayRabbitMQAutoConfiguration
