@@ -48,6 +48,8 @@ spring:
             use404: true
     config:
       enabled: false
+    discovery:
+      enabled: false
   rabbitmq:
     enabled: false
 management:
@@ -56,3 +58,6 @@ management:
   endpoints:
     access:
       default: none
+eureka:
+  client:
+    enabled: false
