@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [0.11.0](https://github.com/justedlev/bridgewayhub/compare/v0.10.3...v0.11.0) (2025-10-18)
+
+
+### 🚀 Features
+
+* **config:** add `spring.cloud.discovery.reactive.enabled` property ([417e421](https://github.com/justedlev/bridgewayhub/commit/417e4216ecbf1ec40ec81975aae26537ba8cf007))
+* **config:** add `spring.profiles.group.standalone` ([3c9b5e5](https://github.com/justedlev/bridgewayhub/commit/3c9b5e56bd6dd16f1b8027ca424a4185f54534a8))
+* **config:** add missing flag enablers ([1182bab](https://github.com/justedlev/bridgewayhub/commit/1182bab5e892c6e5a2afdf9f7bdb3e628305be1a))
+* **config:** improve oauth2 security configuration ([2e80ffc](https://github.com/justedlev/bridgewayhub/commit/2e80ffc21aea800ce2201d6a1d399f37acd819b9))
+* **config:** remove `spring.cloud.gateway.server.webflux.loadbalancer.use404` property ([2000dbc](https://github.com/justedlev/bridgewayhub/commit/2000dbc2646ebc62d61519c360075cf37ecad498))
+* **config:** remove `spring.devtools.add-properties` property ([43967bf](https://github.com/justedlev/bridgewayhub/commit/43967bf200e011ce9c84f773b78a9c4e10531eae))
+* **config:** use hardcoded default client registration id ([fe37e6a](https://github.com/justedlev/bridgewayhub/commit/fe37e6a533f062813785eaf1e67dd29e3738e652))
+
 ## [0.10.3](https://github.com/justedlev/bridgewayhub/compare/v0.10.2...v0.10.3) (2025-10-14)
 
 
