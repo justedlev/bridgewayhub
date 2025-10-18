@@ -15,7 +15,6 @@ spring:
   application:
     name: bridgewayhub
   devtools:
-    add-properties: false
     restart:
       enabled: false
     livereload:
