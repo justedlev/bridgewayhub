@@ -52,10 +52,20 @@ spring:
               lower-case-service-id: true
     config:
       enabled: false
+    bus:
+      enabled: false
     discovery:
       enabled: false
+      reactive:
+        enabled: false
   rabbitmq:
     enabled: false
+  security:
+    oauth2:
+      client:
+        enabled: false
+      resourceserver:
+        enabled: false
 management:
   server:
     port: -1
