@@ -2,6 +2,8 @@ spring:
   cloud:
     discovery:
       enabled: true
+      reactive:
+        enabled: true
 eureka:
   instance:
     instance-id: ${spring.application.name}
