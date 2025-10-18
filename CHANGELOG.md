@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [0.10.2](https://github.com/justedlev/bridgewayhub/compare/v0.10.1...v0.10.2) (2025-10-13)
+
+
+### 🐛 Bug Fixes
+
+* **config:** fail with 404 not found on prometheus scrape ([3b6886b](https://github.com/justedlev/bridgewayhub/commit/3b6886b50595495e99545daedacc719fe12bd37d))
+* **config:** incorrect management port ([9026d42](https://github.com/justedlev/bridgewayhub/commit/9026d42c36a209728d32af001c26b594d81b9fdb))
+
+## [0.10.1](https://github.com/justedlev/bridgewayhub/compare/v0.10.0...v0.10.1) (2025-10-13)
+
+
+### 🐛 Bug Fixes
+
+* registration failed if dont use `discovery` profile ([3096e2a](https://github.com/justedlev/bridgewayhub/commit/3096e2a629842449501e74e57eab0d47da3b5695))
+
 ## [0.10.0](https://github.com/justedlev/bridgewayhub/compare/v0.9.2...v0.10.0) (2025-10-13)
 
 

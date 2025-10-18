@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.security.oauth2.client.OAuth2ClientAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.oauth2.client.reactive.ReactiveOAuth2ClientAutoConfiguration;
 import org.springframework.boot.web.reactive.function.client.WebClientCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
@@ -19,7 +19,7 @@ import org.springframework.security.oauth2.client.web.reactive.function.client.S
 
 @AutoConfiguration
 @ConditionalOnBooleanProperty(prefix = "spring.security.oauth2.client", name = "enabled", matchIfMissing = true)
-@Import(OAuth2ClientAutoConfiguration.class)
+@Import(ReactiveOAuth2ClientAutoConfiguration.class)
 public class BridgeWayOAuth2ClientAutoConfiguration {
     @Getter
     @Setter(onMethod_ = @Value("${spring.security.oauth2.client.enabled:true}"))
