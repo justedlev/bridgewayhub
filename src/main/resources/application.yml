@@ -14,6 +14,13 @@ spring:
       enabled: true
   application:
     name: bridgewayhub
+  profiles:
+    group:
+      standalone:
+        - config-client
+        - discovery
+        - oauth2
+        - management
   devtools:
     restart:
       enabled: false
