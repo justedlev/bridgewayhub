@@ -55,7 +55,7 @@ and [jvm options](.vmoptions)
         <selectedOptions>
             <option name="environmentVariables"/>
         </selectedOptions>
-        <option name="SPRING_BOOT_MAIN_CLASS" value="io.justedlev.msrv.bridgeway.BridgeWayHubApplication"/>
+        <option name="SPRING_BOOT_MAIN_CLASS" value="io.github.justedlev.bridgeway.BridgeWayHubApplication"/>
         <option name="VM_PARAMETERS" value="@.vmoptions"/>
         <method v="2">
             <option name="Make" enabled="true"/>

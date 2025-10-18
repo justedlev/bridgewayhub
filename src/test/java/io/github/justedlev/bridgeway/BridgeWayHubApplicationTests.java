@@ -1,4 +1,4 @@
-package io.justedlev.msrv.bridgeway;
+package io.github.justedlev.bridgeway;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

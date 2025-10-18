@@ -1,4 +1,4 @@
-package io.justedlev.msrv.bridgeway;
+package io.github.justedlev.bridgeway;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

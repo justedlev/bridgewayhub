@@ -1,6 +1,6 @@
-package io.justedlev.msrv.bridgeway.configuration;
+package io.github.justedlev.bridgeway.configuration;
 
-import io.justedlev.msrv.bridgeway.configuration.properties.BridgeWaySecurityConfigurationProperties;
+import io.github.justedlev.bridgeway.configuration.properties.BridgeWaySecurityConfigurationProperties;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.security.oauth2.client.ConditionalOnOAuth2ClientRegistrationProperties;

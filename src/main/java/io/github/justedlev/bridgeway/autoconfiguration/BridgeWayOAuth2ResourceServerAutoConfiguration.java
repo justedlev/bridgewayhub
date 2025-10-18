@@ -1,4 +1,4 @@
-package io.justedlev.msrv.bridgeway.autoconfiguration;
+package io.github.justedlev.bridgeway.autoconfiguration;
 
 import lombok.Getter;
 import lombok.Setter;
