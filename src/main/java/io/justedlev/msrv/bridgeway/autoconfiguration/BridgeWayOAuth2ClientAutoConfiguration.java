@@ -10,7 +10,6 @@ import org.springframework.boot.autoconfigure.security.oauth2.client.reactive.Re
 import org.springframework.boot.web.reactive.function.client.WebClientCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
-import org.springframework.core.env.Environment;
 import org.springframework.security.oauth2.client.AuthorizedClientServiceReactiveOAuth2AuthorizedClientManager;
 import org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientManager;
 import org.springframework.security.oauth2.client.ReactiveOAuth2AuthorizedClientService;
@@ -37,12 +36,10 @@ public class BridgeWayOAuth2ClientAutoConfiguration {
 
     @Bean
     ServerOAuth2AuthorizedClientExchangeFilterFunction exchangeFilterFunction(
-            ReactiveOAuth2AuthorizedClientManager authorizedClientManager,
-            Environment environment
+            ReactiveOAuth2AuthorizedClientManager authorizedClientManager
     ) {
-        var clientRegistrationId = environment.getProperty("spring.application.name", "application");
         var filter = new ServerOAuth2AuthorizedClientExchangeFilterFunction(authorizedClientManager);
-        filter.setDefaultClientRegistrationId(clientRegistrationId);
+        filter.setDefaultClientRegistrationId("client-credentials");
         filter.setDefaultOAuth2AuthorizedClient(true);
 
         return filter;

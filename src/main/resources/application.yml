@@ -14,8 +14,14 @@ spring:
       enabled: true
   application:
     name: bridgewayhub
+  profiles:
+    group:
+      standalone:
+        - config-client
+        - discovery
+        - oauth2
+        - management
   devtools:
-    add-properties: false
     restart:
       enabled: false
     livereload:
@@ -44,14 +50,22 @@ spring:
             locator:
               enabled: true
               lower-case-service-id: true
-          loadbalancer:
-            use404: true
     config:
+      enabled: false
+    bus:
       enabled: false
     discovery:
       enabled: false
+      reactive:
+        enabled: false
   rabbitmq:
     enabled: false
+  security:
+    oauth2:
+      client:
+        enabled: false
+      resourceserver:
+        enabled: false
 management:
   server:
     port: -1
