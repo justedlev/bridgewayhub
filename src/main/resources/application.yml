@@ -17,10 +17,10 @@ spring:
   profiles:
     group:
       standalone:
-        - config-client
-        - discovery
         - oauth2
+        - discovery
         - management
+        - config-client
   devtools:
     restart:
       enabled: false
