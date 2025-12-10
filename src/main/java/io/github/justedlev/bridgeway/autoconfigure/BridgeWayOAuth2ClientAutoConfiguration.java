@@ -1,4 +1,4 @@
-package io.github.justedlev.bridgeway.autoconfiguration;
+package io.github.justedlev.bridgeway.autoconfigure;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBooleanProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
-import org.springframework.boot.autoconfigure.security.oauth2.client.reactive.ReactiveOAuth2ClientAutoConfiguration;
-import org.springframework.boot.web.reactive.function.client.WebClientCustomizer;
+import org.springframework.boot.security.oauth2.client.autoconfigure.reactive.ReactiveOAuth2ClientAutoConfiguration;
+import org.springframework.cloud.client.loadbalancer.reactive.WebClientCustomizer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.security.oauth2.client.AuthorizedClientServiceReactiveOAuth2AuthorizedClientManager;
