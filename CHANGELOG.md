@@ -4,6 +4,35 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [0.12.0](https://github.com/justedlev/bridgewayhub/compare/v0.11.0...v0.12.0) (2025-12-10)
+
+
+### 🚀 Features
+
+* **config:** improve oauth2 security configuration ([7e10248](https://github.com/justedlev/bridgewayhub/commit/7e102482cdfbad7c4372a7afbdb538d60fb59323))
+* migrate to spring boot v4 ([a206a0d](https://github.com/justedlev/bridgewayhub/commit/a206a0d4c26e8fb55cdaf980e7058ed38c0ae7f5))
+
+
+### 🐛 Bug Fixes
+
+* **config:** use correct profiles order ([bf04b32](https://github.com/justedlev/bridgewayhub/commit/bf04b3228bd09bd821a238df8e8486aa9ce06cae))
+
+
+### ♻️ Refactoring
+
+* rename package to `io.github.justedlev.bridgeway.autoconfigure` ([261678c](https://github.com/justedlev/bridgewayhub/commit/261678c5cc41f03b699bb02137bd63209be5768b))
+
+
+### ⚙️ Build
+
+* **deps:** bump actions/checkout from 5 to 6 ([bc5307d](https://github.com/justedlev/bridgewayhub/commit/bc5307d0818f7a6701c124356e2160516a5ab026))
+* **deps:** bump org.apache.maven.plugins:maven-jar-plugin ([f7c4e08](https://github.com/justedlev/bridgewayhub/commit/f7c4e089aca1b35b4101115601f433a63d61394b))
+* **deps:** bump org.springdoc:springdoc-openapi-starter-webflux-ui ([09e1a66](https://github.com/justedlev/bridgewayhub/commit/09e1a669d16829948edb14551192da13ae58ee9e))
+* **deps:** bump org.springframework.boot:spring-boot-starter-parent ([6277ce4](https://github.com/justedlev/bridgewayhub/commit/6277ce47059c8eae9b97e7410f4ed3f5bd3883d5))
+* **deps:** bump org.springframework.boot:spring-boot-starter-parent ([dfd8230](https://github.com/justedlev/bridgewayhub/commit/dfd82305daf00351bb39fdcc08b533c18de6e3ac))
+* **deps:** bump org.springframework.cloud:spring-cloud-dependencies ([e7499fc](https://github.com/justedlev/bridgewayhub/commit/e7499fc60e0c988c93fed2f63221d2d3a4eb03b5))
+* **mvn:** improve build plugin configuration ([be6491c](https://github.com/justedlev/bridgewayhub/commit/be6491cd0b044f4ee95960b9cfb3fd1c002f4ae1))
+
 ## [0.11.0](https://github.com/justedlev/bridgewayhub/compare/v0.10.3...v0.11.0) (2025-10-18)
 
 
