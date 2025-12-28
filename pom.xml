@@ -4,12 +4,12 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.5.6</version>
+        <version>4.0.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>io.github.justedlev.msrv</groupId>
     <artifactId>bridgewayhub</artifactId>
-    <version>0.11.0</version>
+    <version>0.12.0</version>
     <name>BridgeWay Hub</name>
     <description>API Gateway</description>
     <url>https://github.com/justedlev/${project.artifactId}</url>
@@ -47,9 +47,10 @@
         <project.build.sourceEncoding>${encoding}</project.build.sourceEncoding>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.compiler.release>${java.version}</maven.compiler.release>
 
-        <spring-cloud.version>2025.0.0</spring-cloud.version>
-        <springdoc.openapi.version>2.8.13</springdoc.openapi.version>
+        <spring-cloud.version>2025.1.0</spring-cloud.version>
+        <springdoc.openapi.version>3.0.0</springdoc.openapi.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -155,20 +156,23 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <configuration>
-                    <source>${maven.compiler.source}</source>
-                    <target>${maven.compiler.target}</target>
+                    <parameters>true</parameters>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <version>3.4.2</version>
+                <version>3.5.0</version>
                 <configuration>
                     <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
                         <manifestEntries>
-                            <Created-By>Justedlev</Created-By>
-                            <Implementation-Title>${project.description}</Implementation-Title>
-                            <Implementation-Version>${project.version}</Implementation-Version>
+                            <Implementation-Vendor>Justedlev</Implementation-Vendor>
+                            <Created-By>Maven</Created-By>
+                            <Build-Jdk-Spec>${java.version}</Build-Jdk-Spec>
                         </manifestEntries>
                     </archive>
                 </configuration>
