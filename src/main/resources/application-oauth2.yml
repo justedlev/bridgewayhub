@@ -35,11 +35,12 @@ bridgeway:
         - /v3/api-docs/**
         - /swagger-ui.html
         - /swagger-ui/**
+        - /swagger-resources
         - /swagger-resources/**
+        - /configuration/ui
+        - /configuration/security
         - /actuator/**
         - /error
       POST:
-        - /sso/**
+        - /sso/logout
         - /logout
-        - /oauth2/**
-        - /login/**
