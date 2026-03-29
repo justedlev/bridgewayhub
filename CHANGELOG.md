@@ -4,6 +4,60 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [0.12.0](https://github.com/justedlev/bridgewayhub/compare/v0.11.0...v0.12.0) (2026-03-29)
+
+
+### 🚀 Features
+
+* **config:** improve oauth2 security configuration ([7e10248](https://github.com/justedlev/bridgewayhub/commit/7e102482cdfbad7c4372a7afbdb538d60fb59323))
+* migrate to spring boot v4 ([a206a0d](https://github.com/justedlev/bridgewayhub/commit/a206a0d4c26e8fb55cdaf980e7058ed38c0ae7f5))
+
+
+### 🐛 Bug Fixes
+
+* **config:** use correct profiles order ([bf04b32](https://github.com/justedlev/bridgewayhub/commit/bf04b3228bd09bd821a238df8e8486aa9ce06cae))
+
+
+### ♻️ Refactoring
+
+* rename package from `io.github.justedlev.bridgeway.autoconfiguration` to `io.github.justedlev.bridgeway.autoconfigure` ([575f23e](https://github.com/justedlev/bridgewayhub/commit/575f23ef83bd144e4cfa13185ee767bb4652c073))
+* rename package from `io.github.justedlev.bridgeway.autoconfiguration` to `io.github.justedlev.bridgeway.autoconfigure` ([262a98d](https://github.com/justedlev/bridgewayhub/commit/262a98dc328be155f10bd6a919f40dabe0e43298))
+* rename package to `io.github.justedlev.bridgeway.autoconfigure` ([261678c](https://github.com/justedlev/bridgewayhub/commit/261678c5cc41f03b699bb02137bd63209be5768b))
+
+
+### ⚙️ Build
+
+* **deps:** bump actions/cache from 4 to 5 ([90e1032](https://github.com/justedlev/bridgewayhub/commit/90e10329db10f90aaddbec60aa6b093678227215))
+* **deps:** bump actions/checkout from 5 to 6 ([5a47f9a](https://github.com/justedlev/bridgewayhub/commit/5a47f9a3d988454c24349e0020d0e6c2f3d0bd52))
+* **deps:** bump actions/checkout from 5 to 6 ([dcabba0](https://github.com/justedlev/bridgewayhub/commit/dcabba053f749caef813a80e0ce3331bc1626310))
+* **deps:** bump actions/checkout from 5 to 6 ([bc5307d](https://github.com/justedlev/bridgewayhub/commit/bc5307d0818f7a6701c124356e2160516a5ab026))
+* **deps:** bump docker/build-push-action from 6 to 7 ([47e5ab6](https://github.com/justedlev/bridgewayhub/commit/47e5ab6fe029432aca81c15bb5ecbd65e8ebf068))
+* **deps:** bump docker/build-push-action from 6 to 7 ([ffd5a91](https://github.com/justedlev/bridgewayhub/commit/ffd5a9186d1bdfaf775ae078cc44b5591098fb69))
+* **deps:** bump docker/login-action from 3 to 4 ([5cfee4c](https://github.com/justedlev/bridgewayhub/commit/5cfee4cb9c6a82f7fc612e6495d4ce3cd98fa2cb))
+* **deps:** bump docker/login-action from 3 to 4 ([459428f](https://github.com/justedlev/bridgewayhub/commit/459428fd624c286004f8b6e23946311c9ceae887))
+* **deps:** bump docker/metadata-action from 5 to 6 ([41c3af5](https://github.com/justedlev/bridgewayhub/commit/41c3af5069a41be3eafc62d3194b2eb4466a2a60))
+* **deps:** bump docker/metadata-action from 5 to 6 ([92929af](https://github.com/justedlev/bridgewayhub/commit/92929afa85ef6b929d48d161c0489f55307bdd42))
+* **deps:** bump docker/setup-buildx-action from 3 to 4 ([75f34a3](https://github.com/justedlev/bridgewayhub/commit/75f34a38e1132a4ce3887775afbb3e5e09a22fb8))
+* **deps:** bump docker/setup-buildx-action from 3 to 4 ([40a91a7](https://github.com/justedlev/bridgewayhub/commit/40a91a7a3af6b8faccdddda467e46b834c630ce6))
+* **deps:** bump org.apache.maven.plugins:maven-jar-plugin ([30f51b5](https://github.com/justedlev/bridgewayhub/commit/30f51b5d311542474fe928020b63c83696953953))
+* **deps:** bump org.apache.maven.plugins:maven-jar-plugin ([f7c4e08](https://github.com/justedlev/bridgewayhub/commit/f7c4e089aca1b35b4101115601f433a63d61394b))
+* **deps:** bump org.apache.maven.plugins:maven-jar-plugin from 3.4.2 to 3.5.0 ([5d9c02c](https://github.com/justedlev/bridgewayhub/commit/5d9c02c237eec25443e571e44f39483e7dbcdcc6))
+* **deps:** bump org.springdoc:springdoc-openapi-starter-webflux-ui ([269d6b8](https://github.com/justedlev/bridgewayhub/commit/269d6b8a82f7d4c1c0f5298e76bc353036292a14))
+* **deps:** bump org.springdoc:springdoc-openapi-starter-webflux-ui ([09e1a66](https://github.com/justedlev/bridgewayhub/commit/09e1a669d16829948edb14551192da13ae58ee9e))
+* **deps:** bump org.springdoc:springdoc-openapi-starter-webflux-ui from 2.8.13 to 3.0.2 ([7a5d256](https://github.com/justedlev/bridgewayhub/commit/7a5d256d0d06292344c34e89467583cf81bb4ed2))
+* **deps:** bump org.springframework.boot:spring-boot-starter-parent ([ee0a886](https://github.com/justedlev/bridgewayhub/commit/ee0a8869b1d3af64d4143326a81891a876420684))
+* **deps:** bump org.springframework.boot:spring-boot-starter-parent ([60a3d1b](https://github.com/justedlev/bridgewayhub/commit/60a3d1bfb4a8bbb02ce24f2495d062670652b9ca))
+* **deps:** bump org.springframework.boot:spring-boot-starter-parent ([6277ce4](https://github.com/justedlev/bridgewayhub/commit/6277ce47059c8eae9b97e7410f4ed3f5bd3883d5))
+* **deps:** bump org.springframework.boot:spring-boot-starter-parent ([dfd8230](https://github.com/justedlev/bridgewayhub/commit/dfd82305daf00351bb39fdcc08b533c18de6e3ac))
+* **deps:** bump org.springframework.boot:spring-boot-starter-parent from 3.5.6 to 4.0.4 ([dd4d4b0](https://github.com/justedlev/bridgewayhub/commit/dd4d4b03932eb1c3f2b7380abf4476929c241fba))
+* **deps:** bump org.springframework.boot:spring-boot-starter-parent from 4.0.0 to 4.0.1 ([b14f248](https://github.com/justedlev/bridgewayhub/commit/b14f2482eb1d9ea066f72ff600bd721e563d7a4c))
+* **deps:** bump org.springframework.cloud:spring-cloud-dependencies ([6c7d110](https://github.com/justedlev/bridgewayhub/commit/6c7d110f310115da1f2911e95eec4b99a7df6efa))
+* **deps:** bump org.springframework.cloud:spring-cloud-dependencies ([e7499fc](https://github.com/justedlev/bridgewayhub/commit/e7499fc60e0c988c93fed2f63221d2d3a4eb03b5))
+* **deps:** bump org.springframework.cloud:spring-cloud-dependencies from 2025.0.0 to 2025.1.1 ([d27348e](https://github.com/justedlev/bridgewayhub/commit/d27348e56fc7a174b9c1d64706e4f1e619b1ed5b))
+* **mvn:** bump maven wrapper to `3.9.12` ([be60ac0](https://github.com/justedlev/bridgewayhub/commit/be60ac03a92d60e08e0518a254d1a892d91e65a1))
+* **mvn:** improve build plugin configuration ([be6491c](https://github.com/justedlev/bridgewayhub/commit/be6491cd0b044f4ee95960b9cfb3fd1c002f4ae1))
+* **mvnw:** bump maven wrapper to `3.9.12` ([26ed4d9](https://github.com/justedlev/bridgewayhub/commit/26ed4d9c9c6f1655d63d0a3cd9fdbcd7d373229c))
+
 ## [0.11.0](https://github.com/justedlev/bridgewayhub/compare/v0.10.3...v0.11.0) (2025-10-18)
 
 
