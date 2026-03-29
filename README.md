@@ -16,7 +16,7 @@
 
 ## 📋 About
 
-__BridgeWay Hub__ example implementation of `API Gateway` based on `Spring Boot 3`, `Keycloak` as a security layer
+__BridgeWay Hub__ example implementation of `API Gateway` based on `Spring Boot 4`, `Keycloak` as a security layer
 and `Eureka Client` as service registry, in microservice architecture, detailed configuration will depend directly on
 additional business requirements and is applied in the application
 properties. [For more details](https://docs.spring.io/spring-cloud-gateway/docs/current/reference/html/)
