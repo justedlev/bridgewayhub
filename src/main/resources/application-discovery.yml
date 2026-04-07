@@ -3,6 +3,7 @@ spring:
     discovery:
       enabled: true
       reactive:
+        # noinspection SpringBootApplicationYaml
         enabled: true
 eureka:
   instance:
