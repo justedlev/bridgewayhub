@@ -4,6 +4,19 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [1.0.1](https://github.com/justedlev/bridgewayhub/compare/v1.0.0...v1.0.1) (2026-04-07)
+
+
+### 🐛 Bug Fixes
+
+* cannot resolve configuration property 'spring.cloud.discovery.reactive.enabled' ([4e214c3](https://github.com/justedlev/bridgewayhub/commit/4e214c3df3fbfa4d165434b2a8a8da333479119b))
+* unautorized error on discovery registry ([a56d9b0](https://github.com/justedlev/bridgewayhub/commit/a56d9b0aba389749018647fc80ea3136de562f90))
+
+
+### ⚙️ Build
+
+* **deps:** add `org.springframework.boot:spring-boot-webclient` ([d09f8d9](https://github.com/justedlev/bridgewayhub/commit/d09f8d9ba5fe59df0e94a392585ce20b84a3c962))
+
 ## [1.0.0](https://github.com/justedlev/bridgewayhub/compare/v0.11.0...v1.0.0) (2026-03-29)
 
 
