@@ -58,6 +58,7 @@ spring:
     discovery:
       enabled: false
       reactive:
+        # noinspection SpringBootApplicationYaml
         enabled: false
   rabbitmq:
     enabled: false
