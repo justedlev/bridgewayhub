@@ -4,6 +4,18 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [1.0.2](https://github.com/justedlev/bridgewayhub/compare/v1.0.1...v1.0.2) (2026-04-08)
+
+
+### ♻️ Refactoring
+
+* **config:** rename bean name ([8dc3aff](https://github.com/justedlev/bridgewayhub/commit/8dc3aff689e333087ed41da1cfb46f0c56a0c852))
+
+
+### ⚙️ Build
+
+* update `pom.xml` ([106998e](https://github.com/justedlev/bridgewayhub/commit/106998e4e06ee2669fad101b621b36f5f8f0375e))
+
 ## [1.0.1](https://github.com/justedlev/bridgewayhub/compare/v1.0.0...v1.0.1) (2026-04-07)
 
 
