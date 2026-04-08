@@ -46,7 +46,8 @@ public class BridgeWayOAuth2ClientAutoConfiguration {
     }
 
     @Bean
-    WebClientCustomizer webClientCustomizer(ServerOAuth2AuthorizedClientExchangeFilterFunction filter) {
+    WebClientCustomizer serverOAuth2AuthorizedClientExchangeFilterFunctionWebClientCustomizer(
+            ServerOAuth2AuthorizedClientExchangeFilterFunction filter) {
         return builder -> builder.filter(filter);
     }
 
