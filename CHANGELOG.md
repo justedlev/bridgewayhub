@@ -4,6 +4,13 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [1.0.3](https://github.com/justedlev/bridgewayhub/compare/v1.0.2...v1.0.3) (2026-04-11)
+
+
+### ⚙️ Build
+
+* update `pom.xml` ([b95257d](https://github.com/justedlev/bridgewayhub/commit/b95257d5a11fb75abb6b0dcba3c999b5899e6d37))
+
 ## [1.0.2](https://github.com/justedlev/bridgewayhub/compare/v1.0.1...v1.0.2) (2026-04-08)
 
 
