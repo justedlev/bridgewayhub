@@ -4,6 +4,21 @@ All notable changes to this project will be documented in this file.
 
 This project uses **[Conventional Commits](https://www.conventionalcommits.org/)** and is powered by **[release-please](https://github.com/googleapis/release-please)**.
 
+## [1.0.2](https://github.com/justedlev/bridgewayhub/compare/v1.0.1...v1.0.2) (2026-07-14)
+
+
+### ♻️ Refactoring
+
+* rename WebClientCustomizer bean method for clarity ([c4269e7](https://github.com/justedlev/bridgewayhub/commit/c4269e7c04025912cd1d4e31e786b13c39b64b2d))
+
+
+### ⚙️ Build
+
+* **deps:** declare maven-compiler-plugin and maven-jar-plugin versions in properties ([9048a51](https://github.com/justedlev/bridgewayhub/commit/9048a51d34b83cd535d6beba849e8f3198c375f4))
+* **deps:** fix dependency artifactId for spring-boot-starter-webclient ([11ec069](https://github.com/justedlev/bridgewayhub/commit/11ec069e5904e60d3424905d7ba0148b947703c2))
+* **deps:** upgrade Spring Boot to 4.1.0, Spring Cloud to 2025.1.2, and Springdoc OpenAPI to 3.0.3 ([09254d0](https://github.com/justedlev/bridgewayhub/commit/09254d0ade898d72e337291978e0299f0a5c8e70))
+* replace maven.compiler.source/target with maven.compiler.release and configure annotation processors ([c1de555](https://github.com/justedlev/bridgewayhub/commit/c1de555a809647ea5480ce1b6850bed8795ab908))
+
 ## [1.0.1](https://github.com/justedlev/bridgewayhub/compare/v1.0.0...v1.0.1) (2026-04-07)
 
 
