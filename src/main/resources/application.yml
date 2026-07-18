@@ -38,8 +38,10 @@ spring:
             corsConfigurations:
               '[/**]':
                 allow-credentials: true
-                allowed-origin-patterns: '*'
-                allowed-headers: '*'
+                allowed-origin-patterns:
+                  - '*'
+                allowed-headers:
+                  - '*'
                 allowed-methods:
                   - GET
                   - POST
